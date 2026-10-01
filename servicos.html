@@ -6,16 +6,72 @@
 <title>Serviços — SERVIX</title>
 <meta name="description" content="Serviços residenciais, cuidados, automotivo, logística, tecnologia, inteligência artificial, design e marketing, e soluções empresariais." />
 <meta name="theme-color" content="#1D4ED8" />
-<link rel="canonical" href="https://www.servix.com.br/servicos.html" />
 <link rel="preload" as="image" href="https://i.postimg.cc/QxPKh1kx/83fb69c1-108b-4dad-8e00-5b7ead62e1db.png" />
 <link rel="icon" type="image/png" href="https://i.postimg.cc/QxPKh1kx/83fb69c1-108b-4dad-8e00-5b7ead62e1db.png" />
-<link rel="apple-touch-icon" href="https://i.postimg.cc/QxPKh1kx/83fb69c1-108b-4dad-8e00-5b7ead62e1db.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/base.css" />
-<link rel="stylesheet" href="css/servicos.css" />
-<script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
+
+<style>
+/* Cole aqui o MESMO CSS do index.html (todo o bloco <style>) e adicione no final: */
+
+/* ===== SERVIÇOS ===== */
+.page-hero{padding:clamp(48px,6vw,80px) 0 clamp(40px,5vw,60px);background:radial-gradient(600px 300px at 15% 20%,rgba(29,78,216,.10),transparent 60%),radial-gradient(500px 300px at 85% 30%,rgba(250,204,21,.10),transparent 60%),linear-gradient(180deg,#fff,var(--bg-soft));border-bottom:1px solid var(--ink-100);text-align:center}
+.page-hero .container{max-width:900px}
+.breadcrumb{display:inline-flex;gap:8px;font-size:.85rem;color:var(--ink-500);margin-bottom:20px}
+.breadcrumb a{color:var(--blue-600);font-weight:600}
+.breadcrumb a:hover{text-decoration:underline}
+.breadcrumb strong{color:var(--ink-700)}
+.page-hero h1{margin-bottom:16px}
+.page-hero > .container > p{font-size:1.05rem;max-width:640px;margin:0 auto 34px;color:var(--ink-700)}
+.page-hero-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.page-hero-nav a{display:inline-flex;padding:8px 16px;border-radius:var(--radius-full);background:#fff;border:1.5px solid var(--ink-200);font-size:.86rem;font-weight:600;color:var(--ink-700);transition:all var(--t-fast)}
+.page-hero-nav a:nth-child(8n+1):hover{background:var(--blue-600);color:#fff;border-color:var(--blue-600);transform:translateY(-2px)}
+.page-hero-nav a:nth-child(8n+2):hover{background:var(--green-600);color:#fff;border-color:var(--green-600);transform:translateY(-2px)}
+.page-hero-nav a:nth-child(8n+3):hover{background:var(--yellow-600);color:#fff;border-color:var(--yellow-600);transform:translateY(-2px)}
+.page-hero-nav a:nth-child(8n+4):hover{background:var(--red-600);color:#fff;border-color:var(--red-600);transform:translateY(-2px)}
+.page-hero-nav a:nth-child(8n+5):hover{background:var(--purple-600);color:#fff;border-color:var(--purple-600);transform:translateY(-2px)}
+.page-hero-nav a:nth-child(8n+6):hover{background:var(--orange-600);color:#fff;border-color:var(--orange-600);transform:translateY(-2px)}
+.page-hero-nav a:nth-child(8n+7):hover{background:var(--blue-700);color:#fff;border-color:var(--blue-700);transform:translateY(-2px)}
+.page-hero-nav a:nth-child(8n+8):hover{background:var(--green-700);color:#fff;border-color:var(--green-700);transform:translateY(-2px)}
+.page-hero-nav a.is-active{color:#fff;background:var(--blue-600);border-color:var(--blue-600)}
+.dark-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(126,166,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(126,166,255,.06) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(circle at center,black,transparent 75%);-webkit-mask-image:radial-gradient(circle at center,black,transparent 75%);pointer-events:none}
+.ai-wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(32px,5vw,60px);align-items:center}
+.ai-copy h2{margin-bottom:16px}
+.ai-text{font-size:1.02rem;color:var(--ink-700);margin-bottom:26px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chips--lg{gap:12px}
+.chips li{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;background:#fff;border:1.5px solid var(--chip-border,var(--ink-200));border-radius:var(--radius-full);font-size:.9rem;font-weight:600;color:var(--ink-700);transition:transform var(--t-fast),border-color var(--t-fast),color var(--t-fast),background var(--t-fast),box-shadow var(--t-fast);cursor:default}
+.chips li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--chip-dot,var(--blue-500));flex-shrink:0}
+.chips li:hover{transform:translateY(-3px);border-color:var(--chip-hover,var(--blue-500));color:var(--chip-text,var(--blue-700));background:var(--chip-bg,var(--blue-50));box-shadow:0 8px 20px rgba(15,23,42,.08)}
+.chips li:nth-child(4n+1){--chip-dot:var(--blue-500);--chip-hover:var(--blue-500);--chip-bg:var(--blue-50);--chip-text:var(--blue-700)}
+.chips li:nth-child(4n+2){--chip-dot:var(--green-500);--chip-hover:var(--green-500);--chip-bg:var(--green-50);--chip-text:var(--green-700)}
+.chips li:nth-child(4n+3){--chip-dot:var(--yellow-500);--chip-hover:var(--yellow-600);--chip-bg:var(--yellow-50);--chip-text:var(--yellow-700)}
+.chips li:nth-child(4n+4){--chip-dot:var(--red-500);--chip-hover:var(--red-500);--chip-bg:var(--red-50);--chip-text:var(--red-700)}
+.chips--dark li{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);color:#D6E1F7}
+.chips--dark li::before{background:var(--chip-dot,#7EA6FF)}
+.chips--dark li:hover{background:rgba(255,255,255,.14);border-color:var(--chip-dot);color:#fff}
+.chips--ai li{background:#fff;border-color:#E9D5FF;color:#5B21B6}
+.chips--ai li:nth-child(4n+1){--chip-dot:var(--purple-500);--chip-hover:var(--purple-500);--chip-bg:var(--purple-100);--chip-text:var(--purple-600)}
+.chips--ai li:nth-child(4n+2){--chip-dot:var(--blue-500);--chip-hover:var(--blue-500);--chip-bg:var(--blue-50);--chip-text:var(--blue-700)}
+.chips--ai li:nth-child(4n+3){--chip-dot:var(--green-500);--chip-hover:var(--green-500);--chip-bg:var(--green-50);--chip-text:var(--green-700)}
+.chips--ai li:nth-child(4n+4){--chip-dot:var(--orange-500);--chip-hover:var(--orange-500);--chip-bg:var(--orange-100);--chip-text:var(--orange-600)}
+.chips--ai li:hover{background:var(--chip-bg);border-color:var(--chip-hover);color:var(--chip-text)}
+.section-cta{margin-top:34px}
+.final-cta{max-width:720px;margin:0 auto;text-align:center}
+.final-cta h2{margin-bottom:14px}
+.final-cta p{margin-bottom:28px;font-size:1.05rem}
+.final-cta-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-outline-light{color:#fff;border-color:rgba(255,255,255,.45)}
+.btn-outline-light:hover{background:rgba(255,255,255,.12);border-color:#fff;color:#fff}
+.eyebrow--ai{background:var(--purple-100);color:var(--purple-600)}
+.eyebrow--ai .eyebrow-dot{background:var(--purple-600)}
+.eyebrow--ai .ic{width:16px;height:16px}
+.btn-accent{background:linear-gradient(100deg,var(--purple-500),var(--red-500));color:#fff;box-shadow:0 18px 40px rgba(139,92,246,.28)}
+.btn-accent:hover{transform:translateY(-2px);box-shadow:0 22px 46px rgba(139,92,246,.4)}
+@media (max-width:900px){.ai-wrap{grid-template-columns:1fr}}
+@media (max-width:600px){.final-cta-actions .btn{width:100%}}
+</style>
 </head>
 <body>
 
@@ -38,12 +94,12 @@
       </ul>
       <div class="nav-cta">
         <a class="btn btn-primary btn-block" href="index.html#contato">Solicitar serviço</a>
-        <a class="btn btn-outline btn-block" href="sobre.html#profissionais">Quero ser profissional</a>
+        <a class="btn btn-green btn-block" href="sobre.html#profissionais">Quero ser profissional</a>
       </div>
     </nav>
     <div class="header-actions">
       <a class="btn btn-ghost" href="index.html#contato">Solicitar serviço</a>
-      <a class="btn btn-primary" href="sobre.html#profissionais">Quero ser profissional</a>
+      <a class="btn btn-green" href="sobre.html#profissionais">Quero ser profissional</a>
     </div>
     <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu" data-menu-toggle><span></span></button>
   </div>
@@ -53,21 +109,15 @@
 
   <section class="page-hero">
     <div class="container">
-      <nav class="breadcrumb" aria-label="Você está em">
-        <a href="index.html">Início</a> <span>/</span> <strong>Serviços</strong>
-      </nav>
+      <nav class="breadcrumb"><a href="index.html">Início</a> <span>/</span> <strong>Serviços</strong></nav>
       <span class="eyebrow"><span class="eyebrow-dot"></span> Categorias de serviços</span>
       <h1>Serviços para todos os momentos</h1>
-      <p>Da manutenção da sua casa às soluções digitais da sua empresa. Escolha uma categoria abaixo e solicite uma proposta personalizada.</p>
+      <p>Da manutenção da sua casa às soluções digitais da sua empresa. Escolha uma categoria e solicite uma proposta personalizada.</p>
       <ul class="page-hero-nav">
-        <li><a href="#casa">Casa</a></li>
-        <li><a href="#cuidados">Cuidados</a></li>
-        <li><a href="#automotivo">Automotivo</a></li>
-        <li><a href="#logistica">Logística</a></li>
-        <li><a href="#tecnologia">Tecnologia</a></li>
-        <li><a href="#ia">IA</a></li>
-        <li><a href="#design">Design</a></li>
-        <li><a href="#empresariais">Empresariais</a></li>
+        <li><a href="#casa">Casa</a></li><li><a href="#cuidados">Cuidados</a></li>
+        <li><a href="#automotivo">Automotivo</a></li><li><a href="#logistica">Logística</a></li>
+        <li><a href="#tecnologia">Tecnologia</a></li><li><a href="#ia">IA</a></li>
+        <li><a href="#design">Design</a></li><li><a href="#empresariais">Empresariais</a></li>
       </ul>
     </div>
   </section>
@@ -100,7 +150,7 @@
         <li>Babá</li><li>Cuidador de idosos</li><li>Acompanhante</li><li>Cuidados infantis</li>
         <li>Pet sitter</li><li>Passeador de cães</li><li>Cuidados com animais</li>
       </ul>
-      <div class="section-cta reveal"><a class="btn btn-primary" href="index.html#contato" data-route="cuidados">Encontrar profissional <svg class="ic"><use href="#i-arrow"/></svg></a></div>
+      <div class="section-cta reveal"><a class="btn btn-green" href="index.html#contato" data-route="cuidados">Encontrar profissional <svg class="ic"><use href="#i-arrow"/></svg></a></div>
     </div>
   </section>
 
@@ -253,7 +303,7 @@
         <h4>Precisa de um serviço?</h4>
         <p>Solicite uma proposta personalizada para sua casa ou empresa.</p>
         <a class="btn btn-primary btn-block" href="index.html#contato">Solicitar serviço</a>
-        <a class="btn btn-outline btn-block" href="sobre.html#profissionais">Quero ser profissional</a>
+        <a class="btn btn-green btn-block" href="sobre.html#profissionais">Quero ser profissional</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -266,7 +316,29 @@
   </div>
 </footer>
 
-<script src="js/base.js" defer></script>
-<script src="js/servicos.js" defer></script>
+<script>
+/* Cole aqui o MESMO JavaScript do index.html, e adicione no final: */
+
+/* ===== NAV DESTAQUE ===== */
+(function () {
+  var navLinks = document.querySelectorAll('.page-hero-nav a');
+  var sections = Array.from(navLinks).map(function (a) {
+    var id = a.getAttribute('href');
+    return id ? document.querySelector(id) : null;
+  }).filter(Boolean);
+  if ('IntersectionObserver' in window && sections.length) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          navLinks.forEach(function (a) {
+            a.classList.toggle('is-active', a.getAttribute('href') === '#' + en.target.id);
+          });
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    sections.forEach(function (s) { io.observe(s); });
+  }
+})();
+</script>
 </body>
 </html>
