@@ -112,7 +112,6 @@ p:last-child{margin-bottom:0}
 .footer-legal a{color:#B9C7E4}
 .js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.3,1) var(--d,0s),transform .7s cubic-bezier(.2,.7,.3,1) var(--d,0s)}
 .js .reveal.is-in{opacity:1;transform:none}
-/* HERO */
 .hero{padding:clamp(56px,8vw,100px) 0;background:radial-gradient(800px 500px at 88% -10%,rgba(29,78,216,.14),transparent 60%),radial-gradient(600px 400px at 10% 90%,rgba(34,197,94,.10),transparent 60%),linear-gradient(180deg,#fff,var(--bg-soft));position:relative;overflow:hidden}
 .hero-inner{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(32px,5vw,64px);align-items:center}
 .hero-copy h1{margin-bottom:20px}
@@ -167,22 +166,14 @@ p:last-child{margin-bottom:0}
 .step-icon .ic{width:24px;height:24px}
 .step h3{margin-bottom:8px}
 .step p{font-size:.92rem;margin:0}
-.cta-box{background:linear-gradient(140deg,var(--blue-700),var(--blue-600) 45%,var(--purple-600));padding:clamp(40px,5vw,70px);border-radius:var(--radius-xl);text-align:center;color:#fff;position:relative;overflow:hidden}
-.cta-box::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 90% 10%,rgba(250,204,21,.22),transparent 45%),radial-gradient(circle at 10% 90%,rgba(34,197,94,.18),transparent 45%)}
-.cta-box > *{position:relative;z-index:1}
-.cta-box h2{color:#fff;margin-bottom:14px}
-.cta-box p{color:#D6E0F5;font-size:1.05rem;margin-bottom:28px;max-width:640px;margin-inline:auto}
-.cta-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.form-wrap{max-width:820px;margin:0 auto;background:#fff;border:1.5px solid var(--ink-200);border-radius:var(--radius-xl);padding:clamp(24px,3vw,40px);box-shadow:var(--shadow-sm);position:relative;overflow:hidden}
-.form-wrap::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--blue-500),var(--green-500),var(--yellow-500),var(--red-500))}
 .field{display:grid;gap:6px;margin-bottom:16px}
 .field label{font-size:.85rem;font-weight:700;color:var(--ink-800)}
 .field input,.field select,.field textarea{padding:12px 14px;border:1.5px solid var(--ink-200);border-radius:12px;font-size:.94rem;background:#fff;transition:border-color var(--t-fast),box-shadow var(--t-fast)}
 .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--blue-500);box-shadow:0 0 0 4px var(--blue-50);outline:none}
 .field textarea{resize:vertical;min-height:120px;font-family:inherit}
 .field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.hp{position:absolute;left:-9999px}
-.form-status{font-size:.9rem;margin-top:12px;text-align:center}
+.form-wrap{max-width:820px;margin:0 auto;background:#fff;border:1.5px solid var(--ink-200);border-radius:var(--radius-xl);padding:clamp(24px,3vw,40px);box-shadow:var(--shadow-sm);position:relative;overflow:hidden}
+.form-wrap::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--blue-500),var(--green-500),var(--yellow-500),var(--red-500))}
 @media (max-width:900px){
   .hero-inner{grid-template-columns:1fr}
   .steps{grid-template-columns:repeat(2,1fr)}
@@ -224,9 +215,9 @@ p:last-child{margin-bottom:0}
         <li><a class="nav-link" href="index.html">Início</a></li>
         <li><a class="nav-link" href="servicos.html">Serviços</a></li>
         <li><a class="nav-link" href="empresas.html">Para Empresas</a></li>
-        <li><a class="nav-link" href="index.html#como-funciona">Como Funciona</a></li>
+        <li><a class="nav-link" href="#como-funciona">Como Funciona</a></li>
         <li><a class="nav-link" href="sobre.html">Sobre Nós</a></li>
-        <li><a class="nav-link" href="index.html#contato">Contato</a></li>
+        <li><a class="nav-link" href="#contato">Contato</a></li>
       </ul>
       <div class="nav-cta">
         <a class="btn btn-primary btn-block" href="#contato">Solicitar serviço</a>
@@ -315,18 +306,18 @@ p:last-child{margin-bottom:0}
       <header class="section-head reveal">
         <span class="eyebrow"><span class="eyebrow-dot"></span> Contato</span>
         <h2>Conte o que você precisa</h2>
-        <p>Preencha o formulário e a SERVIX entra em contato para entender sua necessidade e apresentar a melhor solução.</p>
+        <p>Preencha o formulário e a SERVIX entra em contato para entender sua necessidade.</p>
       </header>
       <div class="form-wrap reveal">
-        <form class="contact-form" novalidate>
+        <form class="contact-form" id="form-contato" novalidate>
           <div class="field-row">
-            <div class="field"><label>Nome *</label><input type="text" placeholder="Seu nome" required /></div>
-            <div class="field"><label>E-mail *</label><input type="email" placeholder="voce@gmail.com" required /></div>
+            <div class="field"><label>Nome *</label><input type="text" name="nome" placeholder="Seu nome" required /></div>
+            <div class="field"><label>E-mail *</label><input type="email" name="email" placeholder="voce@gmail.com" required /></div>
           </div>
           <div class="field-row">
-            <div class="field"><label>Telefone / WhatsApp</label><input type="tel" placeholder="(00) 00000-0000" /></div>
+            <div class="field"><label>Telefone / WhatsApp</label><input type="tel" name="telefone" placeholder="(00) 00000-0000" /></div>
             <div class="field"><label>Tipo de atendimento *</label>
-              <select required>
+              <select name="tipo" required>
                 <option value="" selected disabled>Selecione</option>
                 <option>Serviço residencial</option><option>Tecnologia</option>
                 <option>Inteligência Artificial</option><option>Serviço empresarial</option>
@@ -334,9 +325,10 @@ p:last-child{margin-bottom:0}
               </select>
             </div>
           </div>
-          <div class="field"><label>Serviço desejado</label><input type="text" placeholder="Ex.: limpeza, criação de site, chatbot..." /></div>
-          <div class="field"><label>Mensagem *</label><textarea placeholder="Descreva o que você precisa, o local e o prazo." required></textarea></div>
-          <button class="btn btn-primary btn-lg btn-block" type="submit">Enviar solicitação <svg class="ic"><use href="#i-arrow"/></svg></button>
+          <div class="field"><label>Serviço desejado</label><input type="text" name="servico" placeholder="Ex.: limpeza, criação de site, chatbot..." /></div>
+          <div class="field"><label>Mensagem *</label><textarea name="mensagem" placeholder="Descreva o que você precisa, o local e o prazo." required></textarea></div>
+          <button class="btn btn-primary btn-lg btn-block" type="submit" id="btn-enviar-contato">Enviar solicitação <svg class="ic"><use href="#i-arrow"/></svg></button>
+          <p class="form-status" id="contato-status" style="margin-top:14px;text-align:center;font-weight:600;"></p>
         </form>
       </div>
     </div>
@@ -420,6 +412,55 @@ document.querySelectorAll('[data-year]').forEach(function(el){el.textContent=new
 var current=location.pathname.split('/').pop()||'index.html';
 document.querySelectorAll('.nav-link').forEach(function(a){var href=a.getAttribute('href')||'';if(href===current)a.classList.add('is-active')});
 document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('href');if(id.length<2)return;var el=document.querySelector(id);if(!el)return;e.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'})})});
+})();
+</script>
+
+<!-- ============ ENVIO DE CONTATO ============ -->
+<script>
+(function(){
+  var form = document.getElementById('form-contato');
+  if (!form) return;
+  var status = document.getElementById('contato-status');
+  var btn = document.getElementById('btn-enviar-contato');
+
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    var dados = {
+      nome: form.nome.value.trim(),
+      email: form.email.value.trim().toLowerCase(),
+      telefone: form.telefone.value.trim(),
+      tipo: form.tipo.value,
+      servico: form.servico.value.trim(),
+      mensagem: form.mensagem.value.trim(),
+      origem: 'site-principal'
+    };
+    if (!dados.nome || !dados.email || !dados.mensagem) {
+      status.textContent = '⚠️ Preencha nome, e-mail e mensagem';
+      status.style.color = '#DC2626';
+      return;
+    }
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+    status.textContent = '';
+    try {
+      var res = await fetch('https://servix-api-0qe6.onrender.com/api/contato', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(dados)
+      });
+      var json = await res.json();
+      if (!res.ok) throw new Error(json.mensagem || 'Erro ao enviar');
+      status.textContent = '✅ Mensagem enviada! Entraremos em contato em breve.';
+      status.style.color = '#15803D';
+      form.reset();
+    } catch (err) {
+      status.textContent = '❌ ' + (err.message || 'Erro ao enviar');
+      status.style.color = '#DC2626';
+    } finally {
+      btn.disabled = false;
+      btn.innerHTML = 'Enviar solicitação <svg class="ic"><use href="#i-arrow"/></svg>';
+    }
+  });
 })();
 </script>
 </body>
