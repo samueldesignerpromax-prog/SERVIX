@@ -11,179 +11,162 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --blue-900:#0B1F4B;--blue-800:#122B66;--blue-700:#1D3F9E;--blue-600:#1D4ED8;--blue-500:#2E6BF0;--blue-100:#DCE7FF;--blue-50:#EEF3FF;
-  --green-700:#15803D;--green-600:#16A34A;--green-500:#22C55E;--green-100:#DCFCE7;--green-50:#F0FDF4;
-  --yellow-700:#CA8A04;--yellow-600:#EAB308;--yellow-500:#FACC15;--yellow-100:#FEF9C3;--yellow-50:#FEFCE8;
-  --red-700:#B91C1C;--red-600:#DC2626;--red-500:#EF4444;--red-100:#FEE2E2;--red-50:#FEF2F2;
-  --orange-600:#EA580C;--orange-500:#F97316;--orange-100:#FFEDD5;
-  --purple-600:#7C3AED;--purple-500:#8B5CF6;--purple-100:#EDE9FE;
-  --ink-900:#0B1220;--ink-800:#1E293B;--ink-700:#334155;--ink-500:#64748B;--ink-400:#94A3B8;--ink-200:#E2E8F0;--ink-100:#F1F5F9;--ink-50:#F8FAFC;--white:#fff;
-  --bg:#fff;--bg-soft:#F7F9FC;--bg-dark:#0A1428;
-  --radius-sm:10px;--radius:16px;--radius-lg:22px;--radius-xl:28px;--radius-full:999px;
-  --shadow-xs:0 1px 2px rgba(15,23,42,.06);--shadow-sm:0 4px 14px rgba(15,23,42,.06);--shadow-md:0 10px 30px rgba(15,23,42,.08);--shadow-lg:0 24px 60px rgba(15,23,42,.12);
-  --shadow-blue:0 18px 40px rgba(29,78,216,.28);--shadow-green:0 18px 40px rgba(22,163,74,.28);--shadow-red:0 18px 40px rgba(220,38,38,.28);
+  --blue:#1D4ED8;--blue-dark:#1D3F9E;--blue-light:#3B82F6;--cyan:#06B6D4;
+  --green:#16A34A;--green-light:#22C55E;--green-dark:#15803D;
+  --yellow:#EAB308;--yellow-light:#FACC15;
+  --orange:#F97316;--orange-light:#FB923C;
+  --red:#EF4444;--red-light:#F87171;
+  --purple:#7C3AED;--purple-light:#8B5CF6;
+  --pink:#EC4899;
+  --ink-900:#0B1220;--ink-800:#1E293B;--ink-700:#334155;--ink-500:#64748B;
+  --ink-300:#CBD5E1;--ink-200:#E2E8F0;--ink-100:#F1F5F9;--ink-50:#F8FAFC;--white:#fff;
+  --bg-soft:#F7F9FC;--bg-dark:#0A1428;
+  --radius:16px;--radius-lg:22px;--radius-xl:28px;--radius-full:999px;
   --container:1200px;--gutter:22px;--header-h:74px;
-  --font:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
-  --t-fast:.18s ease;--t:.28s cubic-bezier(.2,.7,.3,1);--t-slow:.5s cubic-bezier(.2,.7,.3,1);
+  --font:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;
 }
-*,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 16px);-webkit-text-size-adjust:100%}
-body{margin:0;font-family:var(--font);font-size:16px;line-height:1.65;color:var(--ink-900);background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:hidden}
-img,svg,video{max-width:100%;display:block}
+body{font-family:var(--font);font-size:16px;line-height:1.65;color:var(--ink-900);background:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
-button,input,select,textarea{font:inherit;color:inherit}
-button{cursor:pointer;border:0;background:none}
-ul,ol{list-style:none;margin:0;padding:0}
-h1,h2,h3,h4{margin:0 0 .5em;font-weight:800;line-height:1.15;letter-spacing:-.02em;color:var(--ink-900)}
+button{cursor:pointer;border:0;background:none;font:inherit}
+ul,ol{list-style:none}
+h1,h2,h3,h4{margin:0 0 .5em;font-weight:800;line-height:1.15;letter-spacing:-.02em}
 h1{font-size:clamp(2.1rem,5vw,3.4rem)}
 h2{font-size:clamp(1.7rem,3.6vw,2.5rem)}
 h3{font-size:1.15rem;font-weight:700}
 p{margin:0 0 1em;color:var(--ink-500)}
 p:last-child{margin-bottom:0}
-:focus-visible{outline:3px solid var(--blue-500);outline-offset:3px;border-radius:6px}
-.skip-link{position:absolute;top:-100px;left:16px;z-index:999;padding:12px 18px;background:var(--blue-600);color:#fff;border-radius:var(--radius-sm);font-weight:700;transition:top var(--t-fast)}
-.skip-link:focus{top:16px}
 .ic{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
 .container{width:100%;max-width:var(--container);margin-inline:auto;padding-inline:var(--gutter)}
 .section{padding:clamp(64px,8vw,110px) 0}
 .section--soft{background:var(--bg-soft)}
-.text-light{color:#fff}
-.text-light-soft{color:#D6E0F5}
-.section-head{max-width:760px;margin:0 auto clamp(40px,5vw,60px);text-align:center}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;margin-bottom:18px;background:var(--blue-50);color:var(--blue-700);border-radius:var(--radius-full);font-size:.82rem;font-weight:700;letter-spacing:.02em;text-transform:uppercase}
-.eyebrow-dot{width:7px;height:7px;border-radius:50%;background:currentColor}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 22px;border-radius:var(--radius-full);font-weight:700;font-size:.94rem;line-height:1;white-space:nowrap;border:1.5px solid transparent;transition:transform var(--t-fast),box-shadow var(--t),background var(--t),color var(--t),border-color var(--t)}
-.btn .ic{width:18px;height:18px;transition:transform var(--t-fast)}
-.btn:hover .ic{transform:translateX(3px)}
-.btn-lg{padding:15px 28px;font-size:1rem}
-.btn-block{width:100%}
-.btn-primary{background:linear-gradient(135deg,var(--blue-600),var(--blue-700));color:#fff;box-shadow:var(--shadow-blue)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 22px 46px rgba(29,78,216,.4)}
-.btn-outline{background:transparent;color:var(--blue-700);border-color:var(--blue-100)}
-.btn-outline:hover{background:var(--blue-50);border-color:var(--blue-500);transform:translateY(-2px)}
-.btn-ghost{background:transparent;color:var(--ink-700);padding:12px 16px}
-.btn-ghost:hover{color:var(--blue-600);background:var(--blue-50)}
-.btn-light{background:#fff;color:var(--blue-700);box-shadow:var(--shadow-md)}
-.btn-green{background:linear-gradient(135deg,var(--green-600),var(--green-700));color:#fff;box-shadow:var(--shadow-green)}
-.btn-green:hover{transform:translateY(-2px);box-shadow:0 22px 46px rgba(22,163,74,.4)}
-.grid{display:grid;gap:22px}
-.grid-3{grid-template-columns:repeat(3,1fr)}
-.brand{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:1.28rem;letter-spacing:-.03em;color:var(--ink-900);flex-shrink:0}
-.brand-logo{width:44px;height:44px;object-fit:contain;border-radius:10px}
-.brand-name{font-size:1.28rem;font-weight:800;color:var(--ink-900)}
-.site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid transparent;transition:box-shadow var(--t),border-color var(--t),background var(--t)}
+.site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.9);backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid transparent;transition:box-shadow .3s,border-color .3s}
 .site-header.is-scrolled{box-shadow:0 6px 24px rgba(15,23,42,.07);border-bottom-color:var(--ink-200)}
 .header-inner{display:flex;align-items:center;gap:18px;height:var(--header-h)}
+.brand{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:1.28rem;letter-spacing:-.03em}
+.brand-logo{width:44px;height:44px;object-fit:contain;border-radius:10px}
 .nav{margin-left:auto}
 .nav-list{display:flex;align-items:center;gap:4px}
-.nav-link{display:block;padding:10px 14px;border-radius:var(--radius-full);font-size:.93rem;font-weight:600;color:var(--ink-700);transition:color var(--t-fast),background var(--t-fast)}
-.nav-link:hover{color:var(--blue-700);background:var(--blue-50)}
-.nav-link.is-active{color:#fff;background:linear-gradient(135deg,var(--blue-600),var(--blue-700))}
+.nav-link{display:block;padding:10px 14px;border-radius:var(--radius-full);font-size:.93rem;font-weight:600;color:var(--ink-700);transition:all .2s}
+.nav-link:hover{color:var(--blue);background:#EEF3FF}
+.nav-link.is-active{color:#fff;background:linear-gradient(135deg,var(--blue),var(--blue-dark))}
 .nav-cta{display:none}
 .header-actions{display:flex;align-items:center;gap:8px;margin-left:8px}
 .menu-toggle{display:none;width:44px;height:44px;border-radius:12px;position:relative;margin-left:auto;border:1px solid var(--ink-200);background:#fff}
-.menu-toggle span,.menu-toggle span::before,.menu-toggle span::after{position:absolute;left:50%;width:20px;height:2px;background:var(--ink-800);border-radius:2px;transform:translateX(-50%);transition:transform var(--t),opacity var(--t)}
+.menu-toggle span,.menu-toggle span::before,.menu-toggle span::after{position:absolute;left:50%;width:20px;height:2px;background:var(--ink-800);border-radius:2px;transform:translateX(-50%);transition:all .3s}
 .menu-toggle span{top:50%;margin-top:-1px}
 .menu-toggle span::before{content:"";top:-6px;left:0;transform:none}
 .menu-toggle span::after{content:"";top:6px;left:0;transform:none}
 .menu-toggle[aria-expanded="true"] span{background:transparent}
 .menu-toggle[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
 .menu-toggle[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
-.cat-icon{width:52px;height:52px;display:grid;place-items:center;margin-bottom:18px;border-radius:16px}
-.cat-icon .ic{width:24px;height:24px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 22px;border-radius:var(--radius-full);font-weight:700;font-size:.94rem;line-height:1;white-space:nowrap;border:1.5px solid transparent;transition:transform .18s,box-shadow .3s,background .3s}
+.btn .ic{width:18px;height:18px}
+.btn-lg{padding:15px 28px;font-size:1rem}
+.btn-block{width:100%}
+.btn-primary{background:linear-gradient(135deg,var(--blue),var(--blue-dark));color:#fff;box-shadow:0 18px 40px rgba(29,78,216,.28)}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--blue-dark);border-color:var(--blue)}
+.btn-outline:hover{background:#EEF3FF}
+.btn-ghost{background:transparent;color:var(--ink-700);padding:12px 16px}
+.btn-ghost:hover{color:var(--blue);background:#EEF3FF}
+.btn-green{background:linear-gradient(135deg,var(--green-light),var(--green-dark));color:#fff;box-shadow:0 18px 40px rgba(22,163,74,.28)}
+.btn-green:hover{transform:translateY(-2px)}
+.btn-whats{background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;box-shadow:0 18px 40px rgba(37,211,102,.3)}
+.btn-whats:hover{transform:translateY(-2px)}
+.btn-light{background:#fff;color:var(--blue-dark);box-shadow:0 10px 30px rgba(15,23,42,.08)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;margin-bottom:18px;border-radius:var(--radius-full);font-size:.82rem;font-weight:700;text-transform:uppercase}
+.eyebrow-dot{width:7px;height:7px;border-radius:50%;background:currentColor}
+.eyebrow--blue{background:#EEF3FF;color:var(--blue-dark)}
+.eyebrow--green{background:#F0FDF4;color:var(--green-dark)}
+.section-head{max-width:760px;margin:0 auto clamp(40px,5vw,60px);text-align:center}
+.hero{position:relative;padding:clamp(56px,8vw,100px) 0;background:
+  radial-gradient(900px 500px at 90% -10%,rgba(29,78,216,.18),transparent 60%),
+  radial-gradient(700px 500px at 5% 100%,rgba(22,163,74,.14),transparent 60%),
+  radial-gradient(500px 400px at 50% 50%,rgba(234,179,8,.10),transparent 60%),
+  linear-gradient(180deg,#fff,#F7F9FC);overflow:hidden}
+.hero-inner{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(32px,5vw,64px);align-items:center;position:relative;z-index:2}
+.hero-copy h1{margin-bottom:20px}
+.hero-copy p{font-size:clamp(1rem,1.4vw,1.14rem);max-width:560px;color:var(--ink-700);margin-bottom:26px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero-checks{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:30px}
+.hero-checks li{display:flex;align-items:center;gap:10px;font-size:.9rem;color:var(--ink-700);font-weight:600}
+.hero-checks .ic{width:20px;height:20px;padding:2px;border-radius:50%;background:#DCFCE7;color:var(--green-dark);stroke-width:2.6}
+.hero-visual{position:relative}
+.hero-illustration{background:#fff;border-radius:28px;padding:30px;box-shadow:0 30px 70px rgba(15,23,42,.15);border:2px solid transparent;background-image:linear-gradient(#fff,#fff),linear-gradient(135deg,var(--blue),var(--purple),var(--green),var(--yellow),var(--orange),var(--red));background-origin:border-box;background-clip:padding-box,border-box}
+.hero-illustration h4{font-size:.9rem;color:var(--ink-500);margin-bottom:6px;font-weight:600}
+.hero-illustration .app-title{font-size:1.15rem;font-weight:800;margin-bottom:18px}
+.service-item{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:14px;margin-bottom:10px;font-size:.88rem;font-weight:600;color:var(--ink-800);border-left:4px solid var(--si-color);background:var(--si-bg);transition:transform .2s}
+.service-item:hover{transform:translateX(6px)}
+.service-item:nth-child(1){--si-color:var(--green);--si-bg:#F0FDF4}
+.service-item:nth-child(2){--si-color:var(--orange);--si-bg:#FFF7ED}
+.service-item:nth-child(3){--si-color:var(--blue);--si-bg:#EEF3FF}
+.service-item:nth-child(4){--si-color:var(--purple);--si-bg:#F5F3FF}
+.service-item .si-ic{width:36px;height:36px;display:grid;place-items:center;border-radius:10px;background:#fff;color:var(--si-color);flex-shrink:0}
+.service-item .si-ic .ic{width:20px;height:20px}
+.service-item small{display:block;font-weight:500;color:var(--ink-500);font-size:.78rem}
+.service-item .si-badge{margin-left:auto;font-size:.72rem;font-weight:700;padding:4px 10px;border-radius:999px;background:var(--si-color);color:#fff}
+.cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.serv-card{position:relative;padding:28px 24px;background:#fff;border:2px solid var(--ink-100);border-radius:22px;box-shadow:0 4px 14px rgba(15,23,42,.04);transition:transform .3s,box-shadow .3s,border-color .3s;overflow:hidden}
+.serv-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--sc1),var(--sc2))}
+.serv-card:hover{transform:translateY(-8px);box-shadow:0 24px 50px rgba(15,23,42,.12);border-color:var(--sc1)}
+.serv-card:nth-child(6n+1){--sc1:var(--green);--sc2:var(--green-light)}
+.serv-card:nth-child(6n+2){--sc1:var(--orange);--sc2:var(--yellow)}
+.serv-card:nth-child(6n+3){--sc1:var(--green-dark);--sc2:var(--cyan)}
+.serv-card:nth-child(6n+4){--sc1:var(--blue);--sc2:var(--cyan)}
+.serv-card:nth-child(6n+5){--sc1:var(--purple);--sc2:var(--pink)}
+.serv-card:nth-child(6n+6){--sc1:var(--blue-dark);--sc2:var(--blue)}
+.serv-card .cat-icon{width:56px;height:56px;display:grid;place-items:center;border-radius:16px;background:linear-gradient(135deg,var(--sc1),var(--sc2));color:#fff;margin-bottom:18px}
+.serv-card .cat-icon .ic{width:26px;height:26px}
+.serv-card h3{margin-bottom:8px}
+.serv-card p{font-size:.92rem;margin-bottom:16px}
+.serv-card .btn-link{display:inline-flex;align-items:center;gap:6px;color:var(--sc1);font-weight:700;font-size:.88rem;transition:gap .2s}
+.serv-card .btn-link:hover{gap:10px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.step{position:relative;padding:32px 24px;background:#fff;border:2px solid var(--ink-100);border-radius:22px;box-shadow:0 4px 14px rgba(15,23,42,.04);transition:transform .3s,box-shadow .3s,border-color .3s;overflow:hidden}
+.step::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--st-color)}
+.step:hover{transform:translateY(-6px);border-color:var(--st-color)}
+.step:nth-child(1){--st-color:var(--blue)}
+.step:nth-child(2){--st-color:var(--purple)}
+.step:nth-child(3){--st-color:var(--orange)}
+.step:nth-child(4){--st-color:var(--green)}
+.step-number{position:absolute;top:20px;right:22px;font-size:2.4rem;font-weight:800;color:var(--st-color);opacity:.18;line-height:1}
+.step-icon{width:52px;height:52px;display:grid;place-items:center;border-radius:16px;background:var(--st-color);color:#fff;margin-bottom:18px}
+.step-icon .ic{width:24px;height:24px}
+.step h3{margin-bottom:8px}
+.step p{font-size:.92rem;margin:0}
+.section--cta{background:linear-gradient(140deg,var(--blue-dark),var(--blue) 45%,var(--purple));position:relative;overflow:hidden;padding:clamp(50px,6vw,80px) 0}
+.section--cta::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 90% 10%,rgba(250,204,21,.25),transparent 45%),radial-gradient(circle at 10% 90%,rgba(34,197,94,.2),transparent 45%);pointer-events:none}
+.section--cta .container{position:relative;z-index:2}
+.cta-box{max-width:760px;margin:0 auto;text-align:center}
+.cta-box h2{color:#fff;margin-bottom:14px}
+.cta-box p{color:#D6E0F5;font-size:1.05rem;margin-bottom:28px}
+.cta-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 .site-footer{background:var(--bg-dark);color:#B9C7E4;padding:70px 0 0;position:relative;overflow:hidden}
-.site-footer::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--blue-500),var(--green-500),var(--yellow-500),var(--red-500))}
+.site-footer::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--blue),var(--cyan),var(--green),var(--yellow),var(--orange),var(--red),var(--pink),var(--purple))}
 .footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px;padding-bottom:50px;border-bottom:1px solid rgba(255,255,255,.08)}
 .brand--footer .brand-name{color:#fff}
 .brand--footer .brand-logo{filter:brightness(0) invert(1)}
-.footer-slogan{color:#8FA6CC;font-size:.94rem;max-width:320px}
-.footer-channels{margin-top:20px;display:grid;gap:8px;font-size:.85rem}
-.footer-channels li{display:flex;align-items:center;gap:9px;color:#8FA6CC}
-.footer-channels .ic{width:16px;height:16px}
+.footer-slogan{color:#8FA6CC;font-size:.94rem;max-width:320px;margin-top:14px}
+.footer-wa{margin-top:20px;display:inline-flex}
 .footer-col h4{color:#fff;font-size:.95rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:18px}
 .footer-col ul{display:grid;gap:10px}
 .footer-col a{color:#B9C7E4;font-size:.92rem}
 .footer-col a:hover{color:#fff}
-.footer-cta p{font-size:.9rem;color:#8FA6CC;margin-bottom:16px}
-.footer-cta .btn{margin-bottom:10px}
 .footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:26px 0;font-size:.85rem;color:#7A8DAF;flex-wrap:wrap}
 .footer-legal{display:flex;gap:22px}
 .footer-legal a{color:#B9C7E4}
+.footer-legal a:hover{color:#fff}
 .js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.3,1) var(--d,0s),transform .7s cubic-bezier(.2,.7,.3,1) var(--d,0s)}
 .js .reveal.is-in{opacity:1;transform:none}
-.hero{padding:clamp(56px,8vw,100px) 0;background:radial-gradient(800px 500px at 88% -10%,rgba(29,78,216,.14),transparent 60%),radial-gradient(600px 400px at 10% 90%,rgba(34,197,94,.10),transparent 60%),linear-gradient(180deg,#fff,var(--bg-soft));position:relative;overflow:hidden}
-.hero-inner{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(32px,5vw,64px);align-items:center}
-.hero-copy h1{margin-bottom:20px}
-.hero-copy p{font-size:clamp(1rem,1.4vw,1.14rem);max-width:560px;color:var(--ink-700)}
-.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-.hero-checks{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:30px}
-.hero-checks li{display:flex;align-items:center;gap:10px;font-size:.9rem;color:var(--ink-700);font-weight:600}
-.hero-checks .ic{width:18px;height:18px;padding:2px;border-radius:50%;background:var(--green-100);color:var(--green-600);stroke-width:2.6}
-.hero-visual{position:relative}
-.float-card{position:absolute;padding:14px 18px;background:#fff;border-radius:var(--radius);box-shadow:var(--shadow-md);display:flex;align-items:center;gap:12px;font-size:.85rem;font-weight:600;color:var(--ink-800);animation:float 4s ease-in-out infinite}
-.float-card .fc-ic{width:36px;height:36px;display:grid;place-items:center;border-radius:10px;background:var(--green-100);color:var(--green-600)}
-.float-card--1{top:6%;left:-4%}
-.float-card--2{bottom:10%;right:-4%;animation-delay:1s}
-.float-card--2 .fc-ic{background:var(--blue-100);color:var(--blue-600)}
-.float-card--3{top:45%;right:-8%;animation-delay:2s}
-.float-card--3 .fc-ic{background:var(--purple-100);color:var(--purple-600)}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.app-mockup{background:#fff;border-radius:var(--radius-xl);padding:26px;box-shadow:var(--shadow-lg);border:1.5px solid var(--ink-100)}
-.app-mockup h4{font-size:.9rem;color:var(--ink-500);margin-bottom:6px;font-weight:600}
-.app-mockup .app-title{font-size:1.15rem;font-weight:800;color:var(--ink-900);margin-bottom:18px}
-.app-item{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;margin-bottom:10px;font-size:.86rem;font-weight:600;color:var(--ink-800);border-left:3px solid var(--ai-color,var(--blue-500));background:var(--ai-bg,var(--blue-50))}
-.app-item:nth-child(1){--ai-color:var(--blue-500);--ai-bg:var(--blue-50)}
-.app-item:nth-child(2){--ai-color:var(--green-500);--ai-bg:var(--green-50)}
-.app-item:nth-child(3){--ai-color:var(--yellow-500);--ai-bg:var(--yellow-50)}
-.app-item:nth-child(4){--ai-color:var(--red-500);--ai-bg:var(--red-50)}
-.app-item .fc-ic{width:34px;height:34px;display:grid;place-items:center;border-radius:10px;background:#fff;color:var(--ai-color)}
-.app-item .fc-ic .ic{width:18px;height:18px}
-.app-item small{display:block;font-weight:500;color:var(--ink-500);font-size:.78rem}
-.app-item .badge{margin-left:auto;font-size:.72rem;font-weight:700;padding:4px 10px;border-radius:999px;background:var(--ai-color);color:#fff}
-.feature-card{padding:28px 24px;background:#fff;border:1.5px solid var(--ink-200);border-radius:var(--radius-lg);box-shadow:var(--shadow-xs);transition:transform var(--t),box-shadow var(--t),border-color var(--t);position:relative;overflow:hidden}
-.feature-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--fc-color,var(--blue-500))}
-.feature-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(15,23,42,.1);border-color:var(--fc-color)}
-.feature-card:nth-child(6n+1){--fc-color:var(--blue-500)}
-.feature-card:nth-child(6n+2){--fc-color:var(--green-500)}
-.feature-card:nth-child(6n+3){--fc-color:var(--yellow-500)}
-.feature-card:nth-child(6n+4){--fc-color:var(--red-500)}
-.feature-card:nth-child(6n+5){--fc-color:var(--purple-500)}
-.feature-card:nth-child(6n+6){--fc-color:var(--orange-500)}
-.feature-card .cat-icon{background:var(--fc-color);color:#fff;margin-bottom:14px}
-.feature-card h3{margin-bottom:8px}
-.feature-card p{font-size:.92rem;margin:0}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-.step{position:relative;padding:32px 24px;background:#fff;border:1.5px solid var(--ink-200);border-radius:var(--radius-lg);box-shadow:var(--shadow-xs);transition:transform var(--t),box-shadow var(--t),border-color var(--t);overflow:hidden}
-.step::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--step-color,var(--blue-500))}
-.step:hover{transform:translateY(-6px);box-shadow:0 16px 40px var(--step-shadow,rgba(29,78,216,.18));border-color:var(--step-color)}
-.step:nth-child(1){--step-color:var(--blue-500);--step-shadow:rgba(29,78,216,.2)}
-.step:nth-child(2){--step-color:var(--green-500);--step-shadow:rgba(34,197,94,.2)}
-.step:nth-child(3){--step-color:var(--yellow-500);--step-shadow:rgba(250,204,21,.28)}
-.step:nth-child(4){--step-color:var(--red-500);--step-shadow:rgba(239,68,68,.2)}
-.step-number{position:absolute;top:20px;right:22px;font-size:2.4rem;font-weight:800;color:var(--step-color);opacity:.18;line-height:1}
-.step-icon{width:52px;height:52px;display:grid;place-items:center;border-radius:16px;background:var(--step-color);color:#fff;margin-bottom:18px}
-.step-icon .ic{width:24px;height:24px}
-.step h3{margin-bottom:8px}
-.step p{font-size:.92rem;margin:0}
-.field{display:grid;gap:6px;margin-bottom:16px}
-.field label{font-size:.85rem;font-weight:700;color:var(--ink-800)}
-.field input,.field select,.field textarea{padding:12px 14px;border:1.5px solid var(--ink-200);border-radius:12px;font-size:.94rem;background:#fff;transition:border-color var(--t-fast),box-shadow var(--t-fast)}
-.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--blue-500);box-shadow:0 0 0 4px var(--blue-50);outline:none}
-.field textarea{resize:vertical;min-height:120px;font-family:inherit}
-.field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.form-wrap{max-width:820px;margin:0 auto;background:#fff;border:1.5px solid var(--ink-200);border-radius:var(--radius-xl);padding:clamp(24px,3vw,40px);box-shadow:var(--shadow-sm);position:relative;overflow:hidden}
-.form-wrap::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--blue-500),var(--green-500),var(--yellow-500),var(--red-500))}
-@media (max-width:900px){
-  .hero-inner{grid-template-columns:1fr}
-  .steps{grid-template-columns:repeat(2,1fr)}
-  .grid-3{grid-template-columns:repeat(2,1fr)}
-  .field-row{grid-template-columns:1fr}
-}
+@media (max-width:1024px){.cards-grid{grid-template-columns:repeat(2,1fr)}.footer-top{grid-template-columns:1fr 1fr;gap:32px}}
+@media (max-width:900px){.hero-inner{grid-template-columns:1fr}.steps{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:860px){
   .header-actions{display:none}
   .menu-toggle{display:block}
-  .nav{position:fixed;top:var(--header-h);left:0;right:0;bottom:0;background:#fff;padding:24px var(--gutter);transform:translateX(100%);transition:transform var(--t);overflow-y:auto;z-index:99}
+  .nav{position:fixed;top:var(--header-h);left:0;right:0;bottom:0;background:#fff;padding:24px var(--gutter);transform:translateX(100%);transition:transform .3s;overflow-y:auto;z-index:99}
   .nav.is-open{transform:translateX(0)}
   .nav-list{flex-direction:column;align-items:stretch;gap:4px}
   .nav-link{padding:14px 16px;font-size:1rem;border-radius:12px}
@@ -194,38 +177,38 @@ p:last-child{margin-bottom:0}
 }
 @media (max-width:600px){
   :root{--gutter:18px}
-  .grid-3{grid-template-columns:1fr}
+  .cards-grid{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr}
   .hero-checks{grid-template-columns:1fr}
+  .cta-actions .btn{width:100%}
+  .brand-logo{width:38px;height:38px}
 }
 </style>
 </head>
 <body>
 
-<a class="skip-link" href="#conteudo">Ir para o conteúdo principal</a>
-
 <header class="site-header" data-header>
   <div class="container header-inner">
     <a class="brand" href="index.html">
-      <img class="brand-logo" src="https://i.postimg.cc/QxPKh1kx/83fb69c1-108b-4dad-8e00-5b7ead62e1db.png" alt="Logotipo SERVIX" width="44" height="44" />
+      <img class="brand-logo" src="https://i.postimg.cc/QxPKh1kx/83fb69c1-108b-4dad-8e00-5b7ead62e1db.png" alt="SERVIX" width="44" height="44" />
       <span class="brand-name">SERVIX</span>
     </a>
     <nav class="nav" id="menu" data-nav>
       <ul class="nav-list">
         <li><a class="nav-link" href="index.html">Início</a></li>
         <li><a class="nav-link" href="servicos.html">Serviços</a></li>
-        <li><a class="nav-link" href="empresas.html">Para Empresas</a></li>
-        <li><a class="nav-link" href="#como-funciona">Como Funciona</a></li>
-        <li><a class="nav-link" href="sobre.html">Sobre Nós</a></li>
-        <li><a class="nav-link" href="#contato">Contato</a></li>
+        <li><a class="nav-link" href="tecnologia.html">Tecnologia</a></li>
+        <li><a class="nav-link" href="empresas.html">Empresas</a></li>
+        <li><a class="nav-link" href="equipe.html">Equipe</a></li>
+        <li><a class="nav-link" href="sobre.html">Sobre</a></li>
       </ul>
       <div class="nav-cta">
-        <a class="btn btn-primary btn-block" href="#contato">Solicitar serviço</a>
+        <a class="btn btn-primary btn-block" href="equipe.html">Falar com a equipe</a>
         <a class="btn btn-green btn-block" href="sobre.html#profissionais">Quero ser profissional</a>
       </div>
     </nav>
     <div class="header-actions">
-      <a class="btn btn-ghost" href="#contato">Solicitar serviço</a>
+      <a class="btn btn-ghost" href="equipe.html">Falar com a equipe</a>
       <a class="btn btn-green" href="sobre.html#profissionais">Quero ser profissional</a>
     </div>
     <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" data-menu-toggle><span></span></button>
@@ -237,50 +220,81 @@ p:last-child{margin-bottom:0}
   <section class="hero">
     <div class="container hero-inner">
       <div class="hero-copy reveal">
-        <span class="eyebrow"><span class="eyebrow-dot"></span> Serviços presenciais + tecnologia + IA</span>
-        <h1>Tudo o que você precisa. <span style="background:linear-gradient(120deg,var(--blue-600),var(--green-500),var(--yellow-500),var(--red-500));-webkit-background-clip:text;background-clip:text;color:transparent;">Em um só lugar.</span></h1>
-        <p>A SERVIX conecta você a serviços, profissionais e soluções tecnológicas para facilitar o seu dia a dia.</p>
+        <span class="eyebrow eyebrow--blue"><span class="eyebrow-dot"></span> Serviços + Tecnologia + IA</span>
+        <h1>Serviços e tecnologia para <span style="background:linear-gradient(100deg,var(--blue),var(--purple),var(--pink),var(--orange),var(--yellow));-webkit-background-clip:text;background-clip:text;color:transparent;">simplificar o seu dia a dia.</span></h1>
+        <p>Na SERVIX você encontra profissionais, serviços e soluções tecnológicas em um só lugar.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary btn-lg" href="#contato">Encontrar um serviço <svg class="ic"><use href="#i-arrow"/></svg></a>
-          <a class="btn btn-outline btn-lg" href="#como-funciona">Conhecer a SERVIX</a>
+          <a class="btn btn-primary btn-lg" href="equipe.html">Solicitar serviço <svg class="ic"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-outline btn-lg" href="tecnologia.html">Conhecer nossas soluções</a>
+          <a class="btn btn-whats btn-lg" href="https://wa.me/5511913031275" target="_blank" rel="noopener">
+            <svg class="ic" style="width:20px;height:20px"><use href="#i-whatsapp"/></svg>
+            Falar pelo WhatsApp
+          </a>
         </div>
         <ul class="hero-checks">
+          <li><svg class="ic"><use href="#i-check"/></svg> Profissionais qualificados</li>
           <li><svg class="ic"><use href="#i-check"/></svg> Serviços residenciais e empresariais</li>
-          <li><svg class="ic"><use href="#i-check"/></svg> Profissionais especializados</li>
           <li><svg class="ic"><use href="#i-check"/></svg> Tecnologia, automação e IA</li>
-          <li><svg class="ic"><use href="#i-check"/></svg> Contratos recorrentes para empresas</li>
+          <li><svg class="ic"><use href="#i-check"/></svg> Atendimento personalizado</li>
         </ul>
       </div>
       <div class="hero-visual reveal" style="--d:.15s">
-        <div class="app-mockup">
+        <div class="hero-illustration">
           <h4>SERVIX</h4>
           <div class="app-title">Sua central de serviços</div>
-          <div class="app-item"><span class="fc-ic"><svg class="ic"><use href="#i-home"/></svg></span><div>Limpeza residencial<small>Profissional a caminho</small></div><span class="badge">Hoje</span></div>
-          <div class="app-item"><span class="fc-ic"><svg class="ic"><use href="#i-wrench"/></svg></span><div>Pequenos reparos<small>Orçamento em análise</small></div><span class="badge">Aberto</span></div>
-          <div class="app-item"><span class="fc-ic"><svg class="ic"><use href="#i-code"/></svg></span><div>Criação de site<small>Projeto em andamento</small></div><span class="badge">Projeto</span></div>
-          <div class="app-item"><span class="fc-ic"><svg class="ic"><use href="#i-sparkles"/></svg></span><div>Automação com IA<small>Atendimento automatizado</small></div><span class="badge">IA</span></div>
+          <div class="service-item"><span class="si-ic"><svg class="ic"><use href="#i-home"/></svg></span><div>Limpeza residencial<small>Profissional a caminho</small></div><span class="si-badge">Hoje</span></div>
+          <div class="service-item"><span class="si-ic"><svg class="ic"><use href="#i-wrench"/></svg></span><div>Pequenos reparos<small>Orçamento em análise</small></div><span class="si-badge">Aberto</span></div>
+          <div class="service-item"><span class="si-ic"><svg class="ic"><use href="#i-code"/></svg></span><div>Criação de site<small>Projeto em andamento</small></div><span class="si-badge">Projeto</span></div>
+          <div class="service-item"><span class="si-ic"><svg class="ic"><use href="#i-sparkles"/></svg></span><div>Automação com IA<small>Atendimento automatizado</small></div><span class="si-badge">IA</span></div>
         </div>
-        <div class="float-card float-card--1"><span class="fc-ic"><svg class="ic"><use href="#i-check"/></svg></span><div><strong>Serviço concluído</strong><br><small style="color:var(--ink-500)">Você pode avaliar</small></div></div>
-        <div class="float-card float-card--2"><span class="fc-ic"><svg class="ic"><use href="#i-chat"/></svg></span><div><strong>Suporte 24/7</strong><br><small style="color:var(--ink-500)">Atendimento online</small></div></div>
-        <div class="float-card float-card--3"><span class="fc-ic"><svg class="ic"><use href="#i-sparkles"/></svg></span><div><strong>IA aplicada</strong><br><small style="color:var(--ink-500)">Automação real</small></div></div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="solucoes">
+  <section class="section" id="servicos">
     <div class="container">
       <header class="section-head reveal">
-        <span class="eyebrow"><span class="eyebrow-dot"></span> O que fazemos</span>
-        <h2>Uma central completa de serviços e tecnologia</h2>
-        <p>Da limpeza da sua casa ao sistema da sua empresa. A SERVIX reúne tudo em um só lugar.</p>
+        <span class="eyebrow eyebrow--green"><span class="eyebrow-dot"></span> Nossos serviços</span>
+        <h2>O que você precisa, a gente resolve</h2>
+        <p>Serviços presenciais e profissionais para o seu dia a dia, com qualidade e confiança.</p>
       </header>
-      <div class="grid grid-3">
-        <article class="feature-card reveal"><span class="cat-icon"><svg class="ic"><use href="#i-home"/></svg></span><h3>Serviços residenciais</h3><p>Limpeza, reparos, jardinagem, montagem de móveis e muito mais para o seu lar.</p></article>
-        <article class="feature-card reveal" style="--d:.06s"><span class="cat-icon"><svg class="ic"><use href="#i-wrench"/></svg></span><h3>Manutenção e reparos</h3><p>Profissionais qualificados para pequenos e grandes reparos no seu imóvel.</p></article>
-        <article class="feature-card reveal" style="--d:.12s"><span class="cat-icon"><svg class="ic"><use href="#i-code"/></svg></span><h3>Tecnologia</h3><p>Sites, sistemas, aplicativos, integrações e suporte técnico especializado.</p></article>
-        <article class="feature-card reveal" style="--d:.18s"><span class="cat-icon"><svg class="ic"><use href="#i-sparkles"/></svg></span><h3>Inteligência Artificial</h3><p>Chatbots, automações, assistentes virtuais e soluções com IA generativa.</p></article>
-        <article class="feature-card reveal" style="--d:.24s"><span class="cat-icon"><svg class="ic"><use href="#i-palette"/></svg></span><h3>Design e Marketing</h3><p>Identidade visual, redes sociais, campanhas e criação de conteúdo.</p></article>
-        <article class="feature-card reveal" style="--d:.3s"><span class="cat-icon"><svg class="ic"><use href="#i-briefcase"/></svg></span><h3>Serviços empresariais</h3><p>Contratos recorrentes, apoio operacional e soluções sob medida.</p></article>
+      <div class="cards-grid">
+        <article class="serv-card reveal">
+          <span class="cat-icon"><svg class="ic"><use href="#i-sparkles"/></svg></span>
+          <h3>🧹 Limpeza e conservação</h3>
+          <p>Limpeza residencial, comercial, pós-obra e conservação de ambientes.</p>
+          <a class="btn-link" href="equipe.html">Solicitar <svg class="ic" style="width:16px;height:16px"><use href="#i-arrow"/></svg></a>
+        </article>
+        <article class="serv-card reveal" style="--d:.06s">
+          <span class="cat-icon"><svg class="ic"><use href="#i-home"/></svg></span>
+          <h3>🏠 Serviços domésticos</h3>
+          <p>Ajuda em casa, organização, montagem de móveis e pequenas tarefas.</p>
+          <a class="btn-link" href="equipe.html">Solicitar <svg class="ic" style="width:16px;height:16px"><use href="#i-arrow"/></svg></a>
+        </article>
+        <article class="serv-card reveal" style="--d:.12s">
+          <span class="cat-icon"><svg class="ic"><use href="#i-layers"/></svg></span>
+          <h3>🌱 Jardinagem</h3>
+          <p>Manutenção de jardim, poda, paisagismo e cuidado de áreas verdes.</p>
+          <a class="btn-link" href="equipe.html">Solicitar <svg class="ic" style="width:16px;height:16px"><use href="#i-arrow"/></svg></a>
+        </article>
+        <article class="serv-card reveal" style="--d:.18s">
+          <span class="cat-icon"><svg class="ic"><use href="#i-wrench"/></svg></span>
+          <h3>🔧 Manutenção e reparos</h3>
+          <p>Reparos elétricos, hidráulicos, pintura, marcenaria e muito mais.</p>
+          <a class="btn-link" href="equipe.html">Solicitar <svg class="ic" style="width:16px;height:16px"><use href="#i-arrow"/></svg></a>
+        </article>
+        <article class="serv-card reveal" style="--d:.24s">
+          <span class="cat-icon"><svg class="ic"><use href="#i-users"/></svg></span>
+          <h3>👷 Serviços profissionais</h3>
+          <p>Profissionais qualificados para atender a sua necessidade específica.</p>
+          <a class="btn-link" href="equipe.html">Solicitar <svg class="ic" style="width:16px;height:16px"><use href="#i-arrow"/></svg></a>
+        </article>
+        <article class="serv-card reveal" style="--d:.3s">
+          <span class="cat-icon"><svg class="ic"><use href="#i-briefcase"/></svg></span>
+          <h3>🏢 Serviços empresariais</h3>
+          <p>Soluções completas para empresas com atendimento sob demanda.</p>
+          <a class="btn-link" href="empresas.html">Solicitar <svg class="ic" style="width:16px;height:16px"><use href="#i-arrow"/></svg></a>
+        </article>
       </div>
     </div>
   </section>
@@ -288,48 +302,31 @@ p:last-child{margin-bottom:0}
   <section class="section section--soft" id="como-funciona">
     <div class="container">
       <header class="section-head reveal">
-        <span class="eyebrow"><span class="eyebrow-dot"></span> Como funciona</span>
+        <span class="eyebrow eyebrow--blue"><span class="eyebrow-dot"></span> Como funciona</span>
         <h2>Simples do início ao fim</h2>
         <p>Em quatro passos você encontra o profissional ou a solução que precisa.</p>
       </header>
       <ol class="steps">
-        <li class="step reveal"><span class="step-number">1</span><div class="step-icon"><svg class="ic"><use href="#i-chat"/></svg></div><h3>Escolha o serviço</h3><p>Encontre o serviço que você precisa.</p></li>
-        <li class="step reveal" style="--d:.08s"><span class="step-number">2</span><div class="step-icon"><svg class="ic"><use href="#i-target"/></svg></div><h3>Solicite</h3><p>Informe o que precisa através da SERVIX.</p></li>
-        <li class="step reveal" style="--d:.16s"><span class="step-number">3</span><div class="step-icon"><svg class="ic"><use href="#i-users"/></svg></div><h3>Conectamos você</h3><p>A SERVIX encontra uma solução ou profissional adequado.</p></li>
-        <li class="step reveal" style="--d:.24s"><span class="step-number">4</span><div class="step-icon"><svg class="ic"><use href="#i-check"/></svg></div><h3>Resolva</h3><p>O serviço é realizado e você pode avaliar sua experiência.</p></li>
+        <li class="step reveal"><span class="step-number">1</span><div class="step-icon"><svg class="ic"><use href="#i-chat"/></svg></div><h3>Você solicita</h3><p>Nos conte o que você precisa pelo WhatsApp ou formulário.</p></li>
+        <li class="step reveal" style="--d:.08s"><span class="step-number">2</span><div class="step-icon"><svg class="ic"><use href="#i-target"/></svg></div><h3>A SERVIX analisa</h3><p>Entendemos a necessidade e buscamos a melhor solução.</p></li>
+        <li class="step reveal" style="--d:.16s"><span class="step-number">3</span><div class="step-icon"><svg class="ic"><use href="#i-users"/></svg></div><h3>Encontramos a solução</h3><p>Conectamos você ao profissional ou à tecnologia ideal.</p></li>
+        <li class="step reveal" style="--d:.24s"><span class="step-number">4</span><div class="step-icon"><svg class="ic"><use href="#i-check"/></svg></div><h3>O serviço é realizado</h3><p>Você acompanha tudo e avalia sua experiência.</p></li>
       </ol>
     </div>
   </section>
 
-  <section class="section" id="contato">
+  <section class="section--cta">
     <div class="container">
-      <header class="section-head reveal">
-        <span class="eyebrow"><span class="eyebrow-dot"></span> Contato</span>
-        <h2>Conte o que você precisa</h2>
-        <p>Preencha o formulário e a SERVIX entra em contato para entender sua necessidade.</p>
-      </header>
-      <div class="form-wrap reveal">
-        <form class="contact-form" id="form-contato" novalidate>
-          <div class="field-row">
-            <div class="field"><label>Nome *</label><input type="text" name="nome" placeholder="Seu nome" required /></div>
-            <div class="field"><label>E-mail *</label><input type="email" name="email" placeholder="voce@gmail.com" required /></div>
-          </div>
-          <div class="field-row">
-            <div class="field"><label>Telefone / WhatsApp</label><input type="tel" name="telefone" placeholder="(00) 00000-0000" /></div>
-            <div class="field"><label>Tipo de atendimento *</label>
-              <select name="tipo" required>
-                <option value="" selected disabled>Selecione</option>
-                <option>Serviço residencial</option><option>Tecnologia</option>
-                <option>Inteligência Artificial</option><option>Serviço empresarial</option>
-                <option>Contrato recorrente</option><option>Outro</option>
-              </select>
-            </div>
-          </div>
-          <div class="field"><label>Serviço desejado</label><input type="text" name="servico" placeholder="Ex.: limpeza, criação de site, chatbot..." /></div>
-          <div class="field"><label>Mensagem *</label><textarea name="mensagem" placeholder="Descreva o que você precisa, o local e o prazo." required></textarea></div>
-          <button class="btn btn-primary btn-lg btn-block" type="submit" id="btn-enviar-contato">Enviar solicitação <svg class="ic"><use href="#i-arrow"/></svg></button>
-          <p class="form-status" id="contato-status" style="margin-top:14px;text-align:center;font-weight:600;"></p>
-        </form>
+      <div class="cta-box reveal">
+        <h2>Precisa de um serviço ou solução?</h2>
+        <p>Fale com a SERVIX e encontre a solução ideal para sua necessidade.</p>
+        <div class="cta-actions">
+          <a class="btn btn-light btn-lg" href="equipe.html">Falar com a equipe <svg class="ic"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-whats btn-lg" href="https://wa.me/5511913031275" target="_blank" rel="noopener">
+            <svg class="ic" style="width:20px;height:20px"><use href="#i-whatsapp"/></svg>
+            Falar pelo WhatsApp
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -345,28 +342,31 @@ p:last-child{margin-bottom:0}
           <span class="brand-name">SERVIX</span>
         </a>
         <p class="footer-slogan">Tecnologia, serviços e soluções para o seu dia a dia.</p>
-        <ul class="footer-channels">
-          <li><svg class="ic"><use href="#i-whatsapp"/></svg> WhatsApp <span style="color:#5A6E8F;font-style:italic">A definir</span></li>
-          <li><svg class="ic"><use href="#i-mail"/></svg> E-mail <span style="color:#5A6E8F;font-style:italic">A definir</span></li>
-          <li><svg class="ic"><use href="#i-instagram"/></svg> Instagram <span style="color:#5A6E8F;font-style:italic">A definir</span></li>
-        </ul>
+        <a class="btn btn-whats footer-wa" href="https://wa.me/5511913031275" target="_blank" rel="noopener">
+          <svg class="ic" style="width:18px;height:18px"><use href="#i-whatsapp"/></svg>
+          Fale conosco pelo WhatsApp
+        </a>
       </div>
       <nav class="footer-col"><h4>Navegação</h4><ul>
-        <li><a href="index.html">Início</a></li><li><a href="servicos.html">Serviços</a></li>
-        <li><a href="empresas.html">Para Empresas</a></li>
-        <li><a href="sobre.html">Sobre Nós</a></li>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="servicos.html">Serviços</a></li>
+        <li><a href="tecnologia.html">Tecnologia</a></li>
+        <li><a href="empresas.html">Empresas</a></li>
+        <li><a href="equipe.html">Equipe</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
       </ul></nav>
       <nav class="footer-col"><h4>Categorias</h4><ul>
         <li><a href="servicos.html#casa">Serviços presenciais</a></li>
-        <li><a href="servicos.html#tecnologia">Tecnologia</a></li>
-        <li><a href="servicos.html#ia">Inteligência Artificial</a></li>
+        <li><a href="tecnologia.html">Tecnologia</a></li>
+        <li><a href="tecnologia.html#ia">Inteligência Artificial</a></li>
         <li><a href="empresas.html">Serviços empresariais</a></li>
       </ul></nav>
-      <div class="footer-col footer-cta">
-        <h4>Precisa de um serviço?</h4>
-        <p>Solicite uma proposta personalizada para sua casa ou empresa.</p>
-        <a class="btn btn-primary btn-block" href="#contato">Solicitar serviço</a>
-        <a class="btn btn-green btn-block" href="sobre.html#profissionais">Quero ser profissional</a>
+      <div class="footer-col">
+        <h4>Acesso</h4>
+        <ul>
+          <li><a href="https://servix-adm.vercel.app" target="_blank" rel="noopener">Entrar (Admin)</a></li>
+          <li><a href="https://servix-adm-pro.vercel.app" target="_blank" rel="noopener">Admin PRO</a></li>
+        </ul>
       </div>
     </div>
     <div class="footer-bottom">
@@ -387,19 +387,14 @@ var SPRITE='<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hi
 +'<symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.8 4.2 4.2L19 7.4"/></symbol>'
 +'<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h14M13 6.5l5.5 5.5L13 17.5"/></symbol>'
 +'<symbol id="i-code" viewBox="0 0 24 24"><path d="m9 8.5-4 3.5 4 3.5M15 8.5l4 3.5-4 3.5M13.4 4.8l-2.8 14.4"/></symbol>'
-+'<symbol id="i-cpu" viewBox="0 0 24 24"><rect x="6.5" y="6.5" width="11" height="11" rx="2.5"/><path d="M12 3v2.5M12 18.5V21M3 12h2.5M18.5 12H21"/></symbol>'
 +'<symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M11 3.2 12.6 7.6 17 9.2l-4.4 1.6L11 15.2 9.4 10.8 5 9.2l4.4-1.6z"/><path d="m18 14.2.9 2.4 2.4.9-2.4.9-.9 2.4-.9-2.4-2.4-.9 2.4-.9z"/></symbol>'
-+'<symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 21a9 9 0 1 1 9-9c0 2.3-1.9 3.2-3.2 3.2h-1.4a1.8 1.8 0 0 0-1.3 3c.5.5.2 1.4-.5 1.8-.6.4-1.6.5-2.6.5z"/><circle cx="7.6" cy="12.4" r="1.1"/><circle cx="9.9" cy="8.4" r="1.1"/><circle cx="14.6" cy="8.4" r="1.1"/></symbol>'
 +'<symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7.2" width="18" height="12.6" rx="2.4"/><path d="M9 7.2V5.6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v1.6M3 12.6h18"/></symbol>'
-+'<symbol id="i-truck" viewBox="0 0 24 24"><path d="M2.5 6.5h11v10h-11z"/><path d="M13.5 9.5h3.6l3.4 3.4v3.6h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="16.8" cy="18" r="1.6"/></symbol>'
-+'<symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5.4" width="18" height="13.2" rx="2.4"/><path d="m3.8 7 8.2 6 8.2-6"/></symbol>'
 +'<symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M20.5 11.6a8.4 8.4 0 0 1-12.4 7.4L3.5 20.5l1.6-4.5A8.4 8.4 0 1 1 20.5 11.6z"/><path d="M9.2 8.3c.3-.6.5-.6.8-.6h.6c.2 0 .5 0 .7.5l.8 1.7c.1.2 0 .4-.1.6l-.6.7c-.1.2-.2.3 0 .6a7 7 0 0 0 3.1 2.7c.3.1.5.1.6 0l.8-.9c.2-.2.4-.2.6-.1l1.6.8c.3.2.4.3.4.5a1.6 1.6 0 0 1-1.6 1.5 8 8 0 0 1-8-8.2"/></symbol>'
-+'<symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3.4" y="3.4" width="17.2" height="17.2" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="16.9" cy="7.1" r="1" fill="currentColor" stroke="none"/></symbol>'
 +'<symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.2 20a5.8 5.8 0 0 1 11.6 0"/><path d="M16 5.2a3.2 3.2 0 0 1 0 5.9M17.4 20a5.9 5.9 0 0 0-1.4-3.9"/></symbol>'
 +'<symbol id="i-wrench" viewBox="0 0 24 24"><path d="M15.5 3.6a5 5 0 0 0-4.3 7.5L3.8 18.5l1.9 1.9 7.4-7.4a5 5 0 0 0 7.1-6.2l-2.8 2.8-2.6-2.6z"/></symbol>'
 +'<symbol id="i-chat" viewBox="0 0 24 24"><path d="M20.5 12a7.6 7.6 0 0 1-8 7.6 8.6 8.6 0 0 1-2.7-.4L4.5 20.5l1.3-4.8A7.6 7.6 0 0 1 12.5 4.4 7.6 7.6 0 0 1 20.5 12z"/></symbol>'
 +'<symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></symbol>'
-+'<symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3.6 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 9.8l5.9-.9z"/></symbol>'
++'<symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3.4 8.6 4.5-8.6 4.5-8.6-4.5z"/><path d="m3.4 12.6 8.6 4.5 8.6-4.5"/></symbol>'
 +'</svg>';
 document.body.insertAdjacentHTML('afterbegin',SPRITE);
 var header=document.querySelector('[data-header]');
@@ -412,55 +407,6 @@ document.querySelectorAll('[data-year]').forEach(function(el){el.textContent=new
 var current=location.pathname.split('/').pop()||'index.html';
 document.querySelectorAll('.nav-link').forEach(function(a){var href=a.getAttribute('href')||'';if(href===current)a.classList.add('is-active')});
 document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('href');if(id.length<2)return;var el=document.querySelector(id);if(!el)return;e.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'})})});
-})();
-</script>
-
-<!-- ============ ENVIO DE CONTATO ============ -->
-<script>
-(function(){
-  var form = document.getElementById('form-contato');
-  if (!form) return;
-  var status = document.getElementById('contato-status');
-  var btn = document.getElementById('btn-enviar-contato');
-
-  form.addEventListener('submit', async function(e){
-    e.preventDefault();
-    var dados = {
-      nome: form.nome.value.trim(),
-      email: form.email.value.trim().toLowerCase(),
-      telefone: form.telefone.value.trim(),
-      tipo: form.tipo.value,
-      servico: form.servico.value.trim(),
-      mensagem: form.mensagem.value.trim(),
-      origem: 'site-principal'
-    };
-    if (!dados.nome || !dados.email || !dados.mensagem) {
-      status.textContent = '⚠️ Preencha nome, e-mail e mensagem';
-      status.style.color = '#DC2626';
-      return;
-    }
-    btn.disabled = true;
-    btn.textContent = 'Enviando...';
-    status.textContent = '';
-    try {
-      var res = await fetch('https://servix-api-0qe6.onrender.com/api/contato', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(dados)
-      });
-      var json = await res.json();
-      if (!res.ok) throw new Error(json.mensagem || 'Erro ao enviar');
-      status.textContent = '✅ Mensagem enviada! Entraremos em contato em breve.';
-      status.style.color = '#15803D';
-      form.reset();
-    } catch (err) {
-      status.textContent = '❌ ' + (err.message || 'Erro ao enviar');
-      status.style.color = '#DC2626';
-    } finally {
-      btn.disabled = false;
-      btn.innerHTML = 'Enviar solicitação <svg class="ic"><use href="#i-arrow"/></svg>';
-    }
-  });
 })();
 </script>
 </body>
