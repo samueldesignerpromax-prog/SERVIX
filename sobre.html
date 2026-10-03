@@ -5,224 +5,186 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Sobre Nós — SERVIX</title>
 <meta name="description" content="Conheça a SERVIX: uma empresa que conecta pessoas e empresas a serviços presenciais, tecnologia e inteligência artificial." />
-<meta name="theme-color" content="#1D4ED8" />
+<meta name="theme-color" content="#7C3AED" />
 <link rel="icon" type="image/png" href="https://i.postimg.cc/QxPKh1kx/83fb69c1-108b-4dad-8e00-5b7ead62e1db.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --blue-900:#0B1F4B;--blue-800:#122B66;--blue-700:#1D3F9E;--blue-600:#1D4ED8;--blue-500:#2E6BF0;--blue-100:#DCE7FF;--blue-50:#EEF3FF;
-  --green-700:#15803D;--green-600:#16A34A;--green-500:#22C55E;--green-100:#DCFCE7;--green-50:#F0FDF4;
-  --yellow-700:#CA8A04;--yellow-600:#EAB308;--yellow-500:#FACC15;--yellow-100:#FEF9C3;--yellow-50:#FEFCE8;
-  --red-700:#B91C1C;--red-600:#DC2626;--red-500:#EF4444;--red-100:#FEE2E2;--red-50:#FEF2F2;
-  --orange-600:#EA580C;--orange-500:#F97316;--orange-100:#FFEDD5;
-  --purple-600:#7C3AED;--purple-500:#8B5CF6;--purple-100:#EDE9FE;
-  --ink-900:#0B1220;--ink-800:#1E293B;--ink-700:#334155;--ink-500:#64748B;--ink-400:#94A3B8;--ink-200:#E2E8F0;--ink-100:#F1F5F9;--ink-50:#F8FAFC;--white:#fff;
-  --bg:#fff;--bg-soft:#F7F9FC;--bg-dark:#0A1428;
-  --radius-sm:10px;--radius:16px;--radius-lg:22px;--radius-xl:28px;--radius-full:999px;
-  --shadow-xs:0 1px 2px rgba(15,23,42,.06);--shadow-sm:0 4px 14px rgba(15,23,42,.06);--shadow-md:0 10px 30px rgba(15,23,42,.08);--shadow-lg:0 24px 60px rgba(15,23,42,.12);
-  --shadow-blue:0 18px 40px rgba(29,78,216,.28);--shadow-green:0 18px 40px rgba(22,163,74,.28);
+  --blue:#1D4ED8;--blue-dark:#1D3F9E;--blue-light:#3B82F6;--cyan:#06B6D4;
+  --green:#16A34A;--green-light:#22C55E;--green-dark:#15803D;
+  --yellow:#EAB308;--yellow-light:#FACC15;
+  --orange:#F97316;--orange-light:#FB923C;
+  --red:#EF4444;
+  --purple:#7C3AED;--purple-light:#8B5CF6;--purple-dark:#6D28D9;
+  --pink:#EC4899;
+  --whats:#25D366;--whats-dark:#128C7E;
+  --ink-900:#0B1220;--ink-800:#1E293B;--ink-700:#334155;--ink-500:#64748B;
+  --ink-200:#E2E8F0;--ink-100:#F1F5F9;--ink-50:#F8FAFC;--white:#fff;
+  --bg-soft:#F7F9FC;--bg-dark:#0A1428;
+  --radius:16px;--radius-lg:22px;--radius-xl:28px;--radius-full:999px;
   --container:1200px;--gutter:22px;--header-h:74px;
-  --font:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
-  --t-fast:.18s ease;--t:.28s cubic-bezier(.2,.7,.3,1);
+  --font:'Plus Jakarta Sans',system-ui,sans-serif;
 }
-*,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 16px)}
-body{margin:0;font-family:var(--font);font-size:16px;line-height:1.65;color:var(--ink-900);background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{font-family:var(--font);font-size:16px;line-height:1.65;color:var(--ink-900);background:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img,svg{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
-button{cursor:pointer;border:0;background:none}
-ul,ol{list-style:none;margin:0;padding:0}
-h1,h2,h3,h4{margin:0 0 .5em;font-weight:800;line-height:1.15;letter-spacing:-.02em;color:var(--ink-900)}
+button{cursor:pointer;border:0;background:none;font:inherit}
+ul,ol{list-style:none}
+h1,h2,h3,h4{margin:0 0 .5em;font-weight:800;line-height:1.15;letter-spacing:-.02em}
 h1{font-size:clamp(2.1rem,5vw,3.4rem)}
 h2{font-size:clamp(1.7rem,3.6vw,2.5rem)}
 h3{font-size:1.15rem;font-weight:700}
 p{margin:0 0 1em;color:var(--ink-500)}
 p:last-child{margin-bottom:0}
-:focus-visible{outline:3px solid var(--blue-500);outline-offset:3px;border-radius:6px}
-.skip-link{position:absolute;top:-100px;left:16px;z-index:999;padding:12px 18px;background:var(--blue-600);color:#fff;border-radius:var(--radius-sm);font-weight:700;transition:top var(--t-fast)}
-.skip-link:focus{top:16px}
 .ic{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
 .container{width:100%;max-width:var(--container);margin-inline:auto;padding-inline:var(--gutter)}
 .section{padding:clamp(64px,8vw,110px) 0}
 .section--soft{background:var(--bg-soft)}
-.section--cta-pro{background:linear-gradient(150deg,var(--blue-700),var(--blue-600) 45%,var(--purple-600));position:relative;overflow:hidden}
-.section--cta-pro::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 90% 10%,rgba(250,204,21,.22),transparent 45%),radial-gradient(circle at 10% 90%,rgba(34,197,94,.18),transparent 45%);pointer-events:none}
-.text-light{color:#fff}
-.text-light-soft{color:#D6E0F5}
-.section-head{max-width:760px;margin:0 auto clamp(40px,5vw,60px);text-align:center}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;margin-bottom:18px;background:var(--blue-50);color:var(--blue-700);border-radius:var(--radius-full);font-size:.82rem;font-weight:700;letter-spacing:.02em;text-transform:uppercase}
-.eyebrow-dot{width:7px;height:7px;border-radius:50%;background:currentColor}
-.eyebrow--light{background:rgba(255,255,255,.12);color:#DCE7FF}
-.eyebrow--light .eyebrow-dot{background:#FACC15}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 22px;border-radius:var(--radius-full);font-weight:700;font-size:.94rem;line-height:1;white-space:nowrap;border:1.5px solid transparent;transition:transform var(--t-fast),box-shadow var(--t),background var(--t),color var(--t),border-color var(--t)}
-.btn .ic{width:18px;height:18px;transition:transform var(--t-fast)}
-.btn:hover .ic{transform:translateX(3px)}
-.btn-lg{padding:15px 28px;font-size:1rem}
-.btn-block{width:100%}
-.btn-primary{background:linear-gradient(135deg,var(--blue-600),var(--blue-700));color:#fff;box-shadow:var(--shadow-blue)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 22px 46px rgba(29,78,216,.4)}
-.btn-outline{background:transparent;color:var(--blue-700);border-color:var(--blue-100)}
-.btn-outline:hover{background:var(--blue-50);border-color:var(--blue-500);transform:translateY(-2px)}
-.btn-ghost{background:transparent;color:var(--ink-700);padding:12px 16px}
-.btn-ghost:hover{color:var(--blue-600);background:var(--blue-50)}
-.btn-light{background:#fff;color:var(--blue-700);box-shadow:var(--shadow-md)}
-.btn-green{background:linear-gradient(135deg,var(--green-600),var(--green-700));color:#fff;box-shadow:var(--shadow-green)}
-.btn-green:hover{transform:translateY(-2px);box-shadow:0 22px 46px rgba(22,163,74,.4)}
-.grid{display:grid;gap:22px}
-.grid-3{grid-template-columns:repeat(3,1fr)}
-.brand{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:1.28rem;letter-spacing:-.03em;color:var(--ink-900);flex-shrink:0}
-.brand-logo{width:44px;height:44px;object-fit:contain;border-radius:10px}
-.brand-name{font-size:1.28rem;font-weight:800;color:var(--ink-900)}
-.site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid transparent;transition:box-shadow var(--t),border-color var(--t)}
+.site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.9);backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid transparent;transition:box-shadow .3s,border-color .3s}
 .site-header.is-scrolled{box-shadow:0 6px 24px rgba(15,23,42,.07);border-bottom-color:var(--ink-200)}
 .header-inner{display:flex;align-items:center;gap:18px;height:var(--header-h)}
+.brand{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:1.28rem;letter-spacing:-.03em}
+.brand-logo{width:44px;height:44px;object-fit:contain;border-radius:10px}
 .nav{margin-left:auto}
 .nav-list{display:flex;align-items:center;gap:4px}
-.nav-link{display:block;padding:10px 14px;border-radius:var(--radius-full);font-size:.93rem;font-weight:600;color:var(--ink-700);transition:color var(--t-fast),background var(--t-fast)}
-.nav-link:hover{color:var(--blue-700);background:var(--blue-50)}
-.nav-link.is-active{color:#fff;background:linear-gradient(135deg,var(--blue-600),var(--blue-700))}
+.nav-link{display:block;padding:10px 14px;border-radius:var(--radius-full);font-size:.93rem;font-weight:600;color:var(--ink-700);transition:all .2s}
+.nav-link:hover{color:var(--purple);background:#F5F3FF}
+.nav-link.is-active{color:#fff;background:linear-gradient(135deg,var(--purple),var(--purple-dark))}
 .nav-cta{display:none}
 .header-actions{display:flex;align-items:center;gap:8px;margin-left:8px}
 .menu-toggle{display:none;width:44px;height:44px;border-radius:12px;position:relative;margin-left:auto;border:1px solid var(--ink-200);background:#fff}
-.menu-toggle span,.menu-toggle span::before,.menu-toggle span::after{position:absolute;left:50%;width:20px;height:2px;background:var(--ink-800);border-radius:2px;transform:translateX(-50%);transition:transform var(--t),opacity var(--t)}
+.menu-toggle span,.menu-toggle span::before,.menu-toggle span::after{position:absolute;left:50%;width:20px;height:2px;background:var(--ink-800);border-radius:2px;transform:translateX(-50%);transition:all .3s}
 .menu-toggle span{top:50%;margin-top:-1px}
 .menu-toggle span::before{content:"";top:-6px;left:0;transform:none}
 .menu-toggle span::after{content:"";top:6px;left:0;transform:none}
 .menu-toggle[aria-expanded="true"] span{background:transparent}
 .menu-toggle[aria-expanded="true"] span::before{top:0;transform:rotate(45deg)}
 .menu-toggle[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg)}
-.cat-icon{width:52px;height:52px;display:grid;place-items:center;margin-bottom:18px;border-radius:16px}
-.cat-icon .ic{width:24px;height:24px}
-.site-footer{background:var(--bg-dark);color:#B9C7E4;padding:70px 0 0;position:relative;overflow:hidden}
-.site-footer::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--blue-500),var(--green-500),var(--yellow-500),var(--red-500))}
-.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px;padding-bottom:50px;border-bottom:1px solid rgba(255,255,255,.08)}
-.brand--footer .brand-name{color:#fff}
-.brand--footer .brand-logo{filter:brightness(0) invert(1)}
-.footer-slogan{color:#8FA6CC;font-size:.94rem;max-width:320px}
-.footer-channels{margin-top:20px;display:grid;gap:8px;font-size:.85rem}
-.footer-channels li{display:flex;align-items:center;gap:9px;color:#8FA6CC}
-.footer-channels .ic{width:16px;height:16px}
-.footer-col h4{color:#fff;font-size:.95rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:18px}
-.footer-col ul{display:grid;gap:10px}
-.footer-col a{color:#B9C7E4;font-size:.92rem}
-.footer-col a:hover{color:#fff}
-.footer-cta p{font-size:.9rem;color:#8FA6CC;margin-bottom:16px}
-.footer-cta .btn{margin-bottom:10px}
-.footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:26px 0;font-size:.85rem;color:#7A8DAF;flex-wrap:wrap}
-.footer-legal{display:flex;gap:22px}
-.footer-legal a{color:#B9C7E4}
-.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.3,1) var(--d,0s),transform .7s cubic-bezier(.2,.7,.3,1) var(--d,0s)}
-.js .reveal.is-in{opacity:1;transform:none}
-/* PAGE HERO */
-.page-hero{padding:clamp(48px,6vw,80px) 0 clamp(40px,5vw,60px);background:radial-gradient(700px 400px at 20% 20%,rgba(29,78,216,.10),transparent 60%),radial-gradient(600px 400px at 80% 30%,rgba(34,197,94,.10),transparent 60%),linear-gradient(180deg,#fff,var(--bg-soft));border-bottom:1px solid var(--ink-100);text-align:center}
-.page-hero .container{max-width:900px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 22px;border-radius:var(--radius-full);font-weight:700;font-size:.94rem;line-height:1;white-space:nowrap;border:1.5px solid transparent;transition:transform .18s,box-shadow .3s}
+.btn .ic{width:18px;height:18px}
+.btn-lg{padding:15px 28px;font-size:1rem}
+.btn-block{width:100%}
+.btn-primary{background:linear-gradient(135deg,var(--blue),var(--blue-dark));color:#fff;box-shadow:0 18px 40px rgba(29,78,216,.28)}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--ink-700);padding:12px 16px}
+.btn-ghost:hover{color:var(--blue);background:#EEF3FF}
+.btn-green{background:linear-gradient(135deg,var(--green-light),var(--green-dark));color:#fff;box-shadow:0 18px 40px rgba(22,163,74,.28)}
+.btn-green:hover{transform:translateY(-2px)}
+.btn-whats{background:linear-gradient(135deg,var(--whats),var(--whats-dark));color:#fff;box-shadow:0 18px 40px rgba(37,211,102,.3)}
+.btn-whats:hover{transform:translateY(-2px)}
+.btn-light{background:#fff;color:var(--blue-dark);box-shadow:0 10px 30px rgba(15,23,42,.08)}
+.btn-purple{background:linear-gradient(135deg,var(--purple),var(--purple-dark));color:#fff;box-shadow:0 18px 40px rgba(124,58,237,.28)}
+.btn-purple:hover{transform:translateY(-2px)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;margin-bottom:18px;border-radius:var(--radius-full);font-size:.82rem;font-weight:700;text-transform:uppercase}
+.eyebrow-dot{width:7px;height:7px;border-radius:50%;background:currentColor}
+.eyebrow--purple{background:#F5F3FF;color:var(--purple-dark)}
+.section-head{max-width:760px;margin:0 auto clamp(40px,5vw,60px);text-align:center}
+.page-hero{padding:clamp(56px,8vw,100px) 0 clamp(40px,5vw,60px);background:
+  radial-gradient(900px 500px at 90% -10%,rgba(124,58,237,.18),transparent 60%),
+  radial-gradient(700px 500px at 5% 100%,rgba(6,182,212,.15),transparent 60%),
+  linear-gradient(180deg,#fff,#F7F9FC);text-align:center;position:relative;overflow:hidden}
+.page-hero .container{position:relative;z-index:2;max-width:900px}
 .breadcrumb{display:inline-flex;gap:8px;font-size:.85rem;color:var(--ink-500);margin-bottom:20px}
-.breadcrumb a{color:var(--blue-600);font-weight:600}
-.breadcrumb a:hover{text-decoration:underline}
+.breadcrumb a{color:var(--purple);font-weight:600}
 .breadcrumb strong{color:var(--ink-700)}
 .page-hero h1{margin-bottom:16px}
-.page-hero > .container > p{font-size:1.05rem;max-width:680px;margin:0 auto;color:var(--ink-700)}
-/* ABOUT */
+.page-hero p{font-size:1.05rem;max-width:680px;margin:0 auto;color:var(--ink-700)}
 .about-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(32px,5vw,64px);align-items:center}
 .about-copy h2{margin-bottom:18px}
 .about-copy p{font-size:1.02rem;color:var(--ink-700)}
 .about-list{display:grid;gap:14px;margin:22px 0}
 .about-list li{display:flex;gap:12px;align-items:flex-start;font-size:.96rem;color:var(--ink-700);line-height:1.55}
-.about-list .ic{width:22px;height:22px;padding:3px;border-radius:50%;flex-shrink:0;stroke-width:2.4}
-.about-list li:nth-child(1) .ic{background:var(--blue-100);color:var(--blue-600)}
-.about-list li:nth-child(2) .ic{background:var(--green-100);color:var(--green-600)}
-.about-list li:nth-child(3) .ic{background:var(--yellow-100);color:var(--yellow-700)}
-.about-list li:nth-child(4) .ic{background:var(--red-100);color:var(--red-600)}
+.about-list li:nth-child(4n+1) .ic{background:#EEF3FF;color:var(--blue)}
+.about-list li:nth-child(4n+2) .ic{background:#F0FDF4;color:var(--green-dark)}
+.about-list li:nth-child(4n+3) .ic{background:#F5F3FF;color:var(--purple)}
+.about-list li:nth-child(4n+4) .ic{background:#FFF7ED;color:var(--orange)}
+.about-list .ic{width:24px;height:24px;padding:4px;border-radius:50%;flex-shrink:0;stroke-width:2.4}
 .about-list strong{color:var(--ink-900)}
-.about-visual{display:grid;gap:14px}
-.about-card{padding:24px;border-radius:var(--radius-lg);color:#fff;box-shadow:var(--shadow-md);transition:transform var(--t);position:relative;overflow:hidden}
-.about-card::before{content:"";position:absolute;top:-40px;right:-40px;width:140px;height:140px;border-radius:50%;background:rgba(255,255,255,.08)}
-.about-card:hover{transform:translateY(-4px)}
-.about-card h3{margin-bottom:8px;color:#fff;font-size:1.08rem}
-.about-card p{margin:0;color:rgba(255,255,255,.9);font-size:.92rem}
-.about-card--blue{background:linear-gradient(140deg,var(--blue-600),var(--blue-800))}
-.about-card--green{background:linear-gradient(140deg,var(--green-600),var(--green-700))}
-.about-card--yellow{background:linear-gradient(140deg,var(--yellow-500),var(--orange-500))}
-.about-card--red{background:linear-gradient(140deg,var(--red-500),var(--red-700))}
-.about-ic{width:48px;height:48px;display:grid;place-items:center;border-radius:14px;background:rgba(255,255,255,.18);margin-bottom:16px}
-.about-ic .ic{width:24px;height:24px;color:#fff}
-/* VALUES */
-.value-card{padding:26px 22px;background:#fff;border:1.5px solid var(--ink-200);border-radius:var(--radius-lg);box-shadow:var(--shadow-xs);transition:transform var(--t),box-shadow var(--t),border-color var(--t);position:relative;overflow:hidden}
-.value-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--vc-color,var(--blue-500))}
-.value-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px var(--vc-shadow,rgba(29,78,216,.2));border-color:var(--vc-color)}
-.value-card:nth-child(6n+1){--vc-color:var(--blue-500);--vc-shadow:rgba(29,78,216,.2)}
-.value-card:nth-child(6n+2){--vc-color:var(--green-500);--vc-shadow:rgba(34,197,94,.2)}
-.value-card:nth-child(6n+3){--vc-color:var(--yellow-500);--vc-shadow:rgba(250,204,21,.28)}
-.value-card:nth-child(6n+4){--vc-color:var(--red-500);--vc-shadow:rgba(239,68,68,.2)}
-.value-card:nth-child(6n+5){--vc-color:var(--purple-500);--vc-shadow:rgba(139,92,246,.2)}
-.value-card:nth-child(6n+6){--vc-color:var(--orange-500);--vc-shadow:rgba(249,115,22,.22)}
-.value-card .cat-icon{margin-bottom:14px}
-.value-card:nth-child(6n+1) .cat-icon{background:var(--blue-50);color:var(--blue-600)}
-.value-card:nth-child(6n+2) .cat-icon{background:var(--green-50);color:var(--green-600)}
-.value-card:nth-child(6n+3) .cat-icon{background:var(--yellow-50);color:var(--yellow-700)}
-.value-card:nth-child(6n+4) .cat-icon{background:var(--red-50);color:var(--red-600)}
-.value-card:nth-child(6n+5) .cat-icon{background:var(--purple-100);color:var(--purple-600)}
-.value-card:nth-child(6n+6) .cat-icon{background:var(--orange-100);color:var(--orange-600)}
-.value-card:hover .cat-icon{background:var(--vc-color);color:#fff;transform:scale(1.08) rotate(-4deg)}
-.value-card h3{margin-bottom:6px}
+.about-visual{display:grid;gap:16px}
+.about-card{padding:26px;border-radius:22px;color:#fff;box-shadow:0 20px 50px rgba(15,23,42,.15);transition:transform .3s;position:relative;overflow:hidden}
+.about-card::before{content:"";position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.08)}
+.about-card:hover{transform:translateY(-6px)}
+.about-card h3{margin-bottom:8px;color:#fff;font-size:1.1rem}
+.about-card p{margin:0;color:rgba(255,255,255,.92);font-size:.94rem}
+.about-card--blue{background:linear-gradient(140deg,var(--blue),var(--blue-dark))}
+.about-card--green{background:linear-gradient(140deg,var(--green-light),var(--green-dark))}
+.about-card--purple{background:linear-gradient(140deg,var(--purple-light),var(--purple-dark))}
+.about-card--orange{background:linear-gradient(140deg,var(--orange),var(--orange-light))}
+.about-ic{width:52px;height:52px;display:grid;place-items:center;border-radius:16px;background:rgba(255,255,255,.18);margin-bottom:16px;position:relative}
+.about-ic .ic{width:26px;height:26px;color:#fff}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.value-card{padding:28px 24px;background:#fff;border:2px solid var(--ink-100);border-radius:22px;position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s,border-color .3s}
+.value-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(15,23,42,.1);border-color:var(--vc)}
+.value-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--vc)}
+.value-card:nth-child(6n+1){--vc:var(--blue)}
+.value-card:nth-child(6n+2){--vc:var(--green)}
+.value-card:nth-child(6n+3){--vc:var(--yellow)}
+.value-card:nth-child(6n+4){--vc:var(--red)}
+.value-card:nth-child(6n+5){--vc:var(--purple)}
+.value-card:nth-child(6n+6){--vc:var(--orange)}
+.value-card .vc-icon{width:52px;height:52px;display:grid;place-items:center;border-radius:16px;background:linear-gradient(135deg,var(--vc),var(--blue-light));color:#fff;margin-bottom:16px}
+.value-card .vc-icon .ic{width:24px;height:24px}
+.value-card h3{margin-bottom:8px}
 .value-card p{font-size:.92rem;margin:0}
-/* TIMELINE */
 .timeline{position:relative;max-width:820px;margin:0 auto;padding-left:32px}
-.timeline::before{content:"";position:absolute;left:9px;top:8px;bottom:8px;width:3px;border-radius:2px;background:linear-gradient(180deg,var(--blue-500),var(--green-500),var(--yellow-500),var(--red-500))}
+.timeline::before{content:"";position:absolute;left:9px;top:8px;bottom:8px;width:3px;border-radius:2px;background:linear-gradient(180deg,var(--blue),var(--cyan),var(--green),var(--yellow),var(--orange),var(--red),var(--pink),var(--purple))}
 .tl-item{position:relative;padding:0 0 32px 32px}
 .tl-item:last-child{padding-bottom:0}
-.tl-dot{position:absolute;left:-32px;top:6px;width:22px;height:22px;border-radius:50%;background:#fff;border:4px solid var(--tl-color,var(--blue-600));box-shadow:0 0 0 6px var(--tl-glow,rgba(29,78,216,.12))}
-.tl-item:nth-child(1){--tl-color:var(--blue-600);--tl-glow:rgba(29,78,216,.12)}
-.tl-item:nth-child(2){--tl-color:var(--green-600);--tl-glow:rgba(22,163,74,.12)}
-.tl-item:nth-child(3){--tl-color:var(--yellow-600);--tl-glow:rgba(234,179,8,.15)}
-.tl-item:nth-child(4){--tl-color:var(--red-600);--tl-glow:rgba(220,38,38,.12)}
+.tl-dot{position:absolute;left:-32px;top:6px;width:22px;height:22px;border-radius:50%;background:#fff;border:4px solid var(--tl,var(--blue));box-shadow:0 0 0 6px var(--tlg,rgba(29,78,216,.12))}
+.tl-item:nth-child(1){--tl:var(--blue);--tlg:rgba(29,78,216,.12)}
+.tl-item:nth-child(2){--tl:var(--green);--tlg:rgba(22,163,74,.12)}
+.tl-item:nth-child(3){--tl:var(--yellow);--tlg:rgba(234,179,8,.15)}
+.tl-item:nth-child(4){--tl:var(--purple);--tlg:rgba(124,58,237,.12)}
 .tl-content h3{margin-bottom:6px}
 .tl-content p{margin:0;font-size:.95rem}
-/* PRO / BIZ */
-.pro-box{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(30px,4vw,60px);align-items:center}
-.pro-copy h2{margin-bottom:16px}
-.pro-copy p{font-size:1.02rem;margin-bottom:26px}
+.pro-box{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(30px,4vw,60px);align-items:center;padding:clamp(30px,4vw,50px);background:linear-gradient(140deg,#0B1220,var(--purple-dark) 45%,var(--blue-dark));border-radius:28px;color:#fff;position:relative;overflow:hidden}
+.pro-box::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 90% 10%,rgba(250,204,21,.2),transparent 45%),radial-gradient(circle at 10% 90%,rgba(37,211,102,.18),transparent 45%);pointer-events:none}
+.pro-box > *{position:relative;z-index:2}
+.pro-copy h2{color:#fff;margin-bottom:14px}
+.pro-copy p{color:#D6E0F5;font-size:1.02rem;margin-bottom:24px}
 .pro-visual{display:grid;gap:14px}
-.pro-card{display:flex;align-items:center;gap:14px;padding:16px 18px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:var(--radius);backdrop-filter:blur(6px);color:#fff;transition:transform var(--t),background var(--t)}
-.pro-card:hover{transform:translateX(6px);background:rgba(255,255,255,.18)}
+.pro-card{display:flex;align-items:center;gap:14px;padding:16px 18px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:14px;backdrop-filter:blur(6px);color:#fff;transition:transform .2s,background .2s}
+.pro-card:hover{transform:translateX(6px);background:rgba(255,255,255,.14)}
 .pro-card strong{display:block;font-size:.94rem}
-.pro-card small{color:#D6E0F5;font-size:.8rem}
-.hv-ic{width:40px;height:40px;display:grid;place-items:center;border-radius:12px}
-.hv-ic--blue{background:var(--blue-100);color:var(--blue-700)}
-.hv-ic--green{background:var(--green-100);color:var(--green-600)}
-.hv-ic--orange{background:var(--orange-100);color:var(--orange-600)}
-.biz-box{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(30px,4vw,60px);align-items:center;padding:clamp(30px,4vw,50px);background:#fff;border:1.5px solid var(--ink-200);border-radius:var(--radius-xl);box-shadow:var(--shadow-md);position:relative;overflow:hidden}
-.biz-box::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--blue-500),var(--green-500),var(--yellow-500),var(--red-500))}
-.biz-copy h2{margin-bottom:14px}
-.biz-copy p{font-size:1.02rem;margin-bottom:24px}
-.biz-list{display:grid;gap:12px}
-.biz-list li{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:var(--radius);font-weight:600;font-size:.94rem;color:var(--ink-800);transition:background var(--t-fast),transform var(--t-fast)}
-.biz-list li:nth-child(6n+1){background:var(--blue-50)}
-.biz-list li:nth-child(6n+2){background:var(--green-50)}
-.biz-list li:nth-child(6n+3){background:var(--yellow-50)}
-.biz-list li:nth-child(6n+4){background:var(--red-50)}
-.biz-list li:nth-child(6n+5){background:var(--purple-100)}
-.biz-list li:nth-child(6n+6){background:var(--orange-100)}
-.biz-list li:hover{transform:translateX(4px);box-shadow:var(--shadow-sm)}
-.biz-ic{width:36px;height:36px;display:grid;place-items:center;border-radius:10px;background:#fff;box-shadow:var(--shadow-xs)}
-.biz-list li:nth-child(6n+1) .biz-ic{color:var(--blue-600)}
-.biz-list li:nth-child(6n+2) .biz-ic{color:var(--green-600)}
-.biz-list li:nth-child(6n+3) .biz-ic{color:var(--yellow-700)}
-.biz-list li:nth-child(6n+4) .biz-ic{color:var(--red-600)}
-.biz-list li:nth-child(6n+5) .biz-ic{color:var(--purple-600)}
-.biz-list li:nth-child(6n+6) .biz-ic{color:var(--orange-600)}
-.biz-ic .ic{width:18px;height:18px}
-@media (max-width:900px){
-  .about-grid{grid-template-columns:1fr}
-  .pro-box,.biz-box{grid-template-columns:1fr}
-  .grid-3{grid-template-columns:repeat(2,1fr)}
-}
+.pro-card small{color:#B9C7E4;font-size:.8rem}
+.hv-ic{width:44px;height:44px;display:grid;place-items:center;border-radius:12px;flex-shrink:0}
+.hv-ic--blue{background:rgba(29,78,216,.25);color:#7EA6FF}
+.hv-ic--green{background:rgba(34,197,94,.22);color:#4ADE80}
+.hv-ic--orange{background:rgba(249,115,22,.22);color:#FB923C}
+.hv-ic .ic{width:22px;height:22px}
+.section--cta{background:linear-gradient(140deg,var(--purple-dark),var(--purple) 45%,var(--pink));position:relative;overflow:hidden;padding:clamp(50px,6vw,80px) 0}
+.section--cta::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 90% 10%,rgba(250,204,21,.25),transparent 45%),radial-gradient(circle at 10% 90%,rgba(6,182,212,.2),transparent 45%);pointer-events:none}
+.section--cta .container{position:relative;z-index:2}
+.cta-box{max-width:760px;margin:0 auto;text-align:center}
+.cta-box h2{color:#fff;margin-bottom:14px}
+.cta-box p{color:#F5E0FF;font-size:1.05rem;margin-bottom:28px}
+.cta-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.site-footer{background:var(--bg-dark);color:#B9C7E4;padding:70px 0 0;position:relative;overflow:hidden}
+.site-footer::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--blue),var(--cyan),var(--green),var(--yellow),var(--orange),var(--red),var(--pink),var(--purple))}
+.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px;padding-bottom:50px;border-bottom:1px solid rgba(255,255,255,.08)}
+.brand--footer .brand-name{color:#fff}
+.brand--footer .brand-logo{filter:brightness(0) invert(1)}
+.footer-slogan{color:#8FA6CC;font-size:.94rem;max-width:320px;margin-top:14px}
+.footer-wa{margin-top:20px;display:inline-flex}
+.footer-col h4{color:#fff;font-size:.95rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:18px}
+.footer-col ul{display:grid;gap:10px}
+.footer-col a{color:#B9C7E4;font-size:.92rem}
+.footer-col a:hover{color:#fff}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:26px 0;font-size:.85rem;color:#7A8DAF;flex-wrap:wrap}
+.footer-legal{display:flex;gap:22px}
+.footer-legal a{color:#B9C7E4}
+.footer-legal a:hover{color:#fff}
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.3,1) var(--d,0s),transform .7s cubic-bezier(.2,.7,.3,1) var(--d,0s)}
+.js .reveal.is-in{opacity:1;transform:none}
+@media (max-width:1024px){.values-grid{grid-template-columns:repeat(2,1fr)}.footer-top{grid-template-columns:1fr 1fr;gap:32px}}
+@media (max-width:900px){.about-grid{grid-template-columns:1fr}.pro-box{grid-template-columns:1fr}}
 @media (max-width:860px){
   .header-actions{display:none}
   .menu-toggle{display:block}
-  .nav{position:fixed;top:var(--header-h);left:0;right:0;bottom:0;background:#fff;padding:24px var(--gutter);transform:translateX(100%);transition:transform var(--t);overflow-y:auto;z-index:99}
+  .nav{position:fixed;top:var(--header-h);left:0;right:0;bottom:0;background:#fff;padding:24px var(--gutter);transform:translateX(100%);transition:transform .3s;overflow-y:auto;z-index:99}
   .nav.is-open{transform:translateX(0)}
   .nav-list{flex-direction:column;align-items:stretch;gap:4px}
   .nav-link{padding:14px 16px;font-size:1rem;border-radius:12px}
@@ -233,36 +195,36 @@ p:last-child{margin-bottom:0}
 }
 @media (max-width:600px){
   :root{--gutter:18px}
-  .grid-3{grid-template-columns:1fr}
+  .values-grid{grid-template-columns:1fr}
+  .cta-actions .btn{width:100%}
+  .brand-logo{width:38px;height:38px}
 }
 </style>
 </head>
 <body>
 
-<a class="skip-link" href="#conteudo">Ir para o conteúdo principal</a>
-
 <header class="site-header" data-header>
   <div class="container header-inner">
     <a class="brand" href="index.html">
-      <img class="brand-logo" src="https://i.postimg.cc/QxPKh1kx/83fb69c1-108b-4dad-8e00-5b7ead62e1db.png" alt="Logotipo SERVIX" width="44" height="44" />
+      <img class="brand-logo" src="https://i.postimg.cc/QxPKh1kx/83fb69c1-108b-4dad-8e00-5b7ead62e1db.png" alt="SERVIX" width="44" height="44" />
       <span class="brand-name">SERVIX</span>
     </a>
     <nav class="nav" id="menu" data-nav>
       <ul class="nav-list">
         <li><a class="nav-link" href="index.html">Início</a></li>
         <li><a class="nav-link" href="servicos.html">Serviços</a></li>
-        <li><a class="nav-link" href="empresas.html">Para Empresas</a></li>
-        <li><a class="nav-link" href="index.html#como-funciona">Como Funciona</a></li>
-        <li><a class="nav-link" href="sobre.html">Sobre Nós</a></li>
-        <li><a class="nav-link" href="index.html#contato">Contato</a></li>
+        <li><a class="nav-link" href="tecnologia.html">Tecnologia</a></li>
+        <li><a class="nav-link" href="empresas.html">Empresas</a></li>
+        <li><a class="nav-link" href="equipe.html">Equipe</a></li>
+        <li><a class="nav-link" href="sobre.html">Sobre</a></li>
       </ul>
       <div class="nav-cta">
-        <a class="btn btn-primary btn-block" href="index.html#contato">Solicitar serviço</a>
+        <a class="btn btn-primary btn-block" href="equipe.html">Falar com a equipe</a>
         <a class="btn btn-green btn-block" href="#profissionais">Quero ser profissional</a>
       </div>
     </nav>
     <div class="header-actions">
-      <a class="btn btn-ghost" href="index.html#contato">Solicitar serviço</a>
+      <a class="btn btn-ghost" href="equipe.html">Falar com a equipe</a>
       <a class="btn btn-green" href="#profissionais">Quero ser profissional</a>
     </div>
     <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" data-menu-toggle><span></span></button>
@@ -274,8 +236,8 @@ p:last-child{margin-bottom:0}
   <section class="page-hero">
     <div class="container">
       <nav class="breadcrumb"><a href="index.html">Início</a> <span>/</span> <strong>Sobre Nós</strong></nav>
-      <span class="eyebrow"><span class="eyebrow-dot"></span> Sobre a SERVIX</span>
-      <h1>Uma empresa para o seu dia a dia — e para o seu negócio</h1>
+      <span class="eyebrow eyebrow--purple"><span class="eyebrow-dot"></span> Sobre a SERVIX</span>
+      <h1>Uma empresa para o seu <span style="background:linear-gradient(100deg,var(--purple),var(--pink),var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent;">dia a dia</span></h1>
       <p>Conectamos pessoas e empresas a profissionais e soluções para diferentes necessidades, unindo serviços presenciais, tecnologia e inteligência artificial.</p>
     </div>
   </section>
@@ -294,6 +256,7 @@ p:last-child{margin-bottom:0}
           </ul>
           <p>Nosso objetivo é conectar você a profissionais e soluções com praticidade, confiança e tecnologia aplicada a problemas reais.</p>
         </div>
+
         <div class="about-visual reveal" style="--d:.1s">
           <div class="about-card about-card--blue">
             <span class="about-ic"><svg class="ic"><use href="#i-home"/></svg></span>
@@ -305,12 +268,12 @@ p:last-child{margin-bottom:0}
             <h3>Tecnologia</h3>
             <p>Sites, sistemas, suporte técnico e infraestrutura.</p>
           </div>
-          <div class="about-card about-card--yellow">
+          <div class="about-card about-card--purple">
             <span class="about-ic"><svg class="ic"><use href="#i-sparkles"/></svg></span>
             <h3>Inteligência Artificial</h3>
             <p>Automação e novas soluções digitais para o seu negócio.</p>
           </div>
-          <div class="about-card about-card--red">
+          <div class="about-card about-card--orange">
             <span class="about-ic"><svg class="ic"><use href="#i-briefcase"/></svg></span>
             <h3>Contratos empresariais</h3>
             <p>Serviços recorrentes ou sob demanda para empresas.</p>
@@ -323,16 +286,16 @@ p:last-child{margin-bottom:0}
   <section class="section section--soft">
     <div class="container">
       <header class="section-head reveal">
-        <span class="eyebrow"><span class="eyebrow-dot"></span> Nossos valores</span>
+        <span class="eyebrow eyebrow--purple"><span class="eyebrow-dot"></span> Nossos valores</span>
         <h2>O que nos move</h2>
       </header>
-      <div class="grid grid-3">
-        <article class="value-card reveal"><span class="cat-icon"><svg class="ic"><use href="#i-shield"/></svg></span><h3>Confiança</h3><p>Comunicação clara e acompanhamento em todas as etapas do serviço.</p></article>
-        <article class="value-card reveal" style="--d:.06s"><span class="cat-icon"><svg class="ic"><use href="#i-bolt"/></svg></span><h3>Praticidade</h3><p>Facilitamos a busca por profissionais e soluções em um só lugar.</p></article>
-        <article class="value-card reveal" style="--d:.12s"><span class="cat-icon"><svg class="ic"><use href="#i-cpu"/></svg></span><h3>Tecnologia</h3><p>Soluções digitais e inteligência artificial aplicadas ao dia a dia.</p></article>
-        <article class="value-card reveal" style="--d:.18s"><span class="cat-icon"><svg class="ic"><use href="#i-users"/></svg></span><h3>Profissionalismo</h3><p>Conectamos clientes a prestadores comprometidos com o resultado.</p></article>
-        <article class="value-card reveal" style="--d:.24s"><span class="cat-icon"><svg class="ic"><use href="#i-sparkles"/></svg></span><h3>Inovação</h3><p>Tecnologia aplicada a problemas reais de pessoas e empresas.</p></article>
-        <article class="value-card reveal" style="--d:.3s"><span class="cat-icon"><svg class="ic"><use href="#i-layers"/></svg></span><h3>Variedade</h3><p>Diversos serviços em um só lugar, do residencial ao empresarial.</p></article>
+      <div class="values-grid">
+        <article class="value-card reveal"><span class="vc-icon"><svg class="ic"><use href="#i-shield"/></svg></span><h3>Confiança</h3><p>Comunicação clara e acompanhamento em todas as etapas do serviço.</p></article>
+        <article class="value-card reveal" style="--d:.06s"><span class="vc-icon"><svg class="ic"><use href="#i-bolt"/></svg></span><h3>Praticidade</h3><p>Facilitamos a busca por profissionais e soluções em um só lugar.</p></article>
+        <article class="value-card reveal" style="--d:.12s"><span class="vc-icon"><svg class="ic"><use href="#i-cpu"/></svg></span><h3>Tecnologia</h3><p>Soluções digitais e IA aplicadas ao dia a dia das pessoas.</p></article>
+        <article class="value-card reveal" style="--d:.18s"><span class="vc-icon"><svg class="ic"><use href="#i-users"/></svg></span><h3>Profissionalismo</h3><p>Conectamos clientes a prestadores comprometidos com o resultado.</p></article>
+        <article class="value-card reveal" style="--d:.24s"><span class="vc-icon"><svg class="ic"><use href="#i-sparkles"/></svg></span><h3>Inovação</h3><p>Tecnologia aplicada a problemas reais de pessoas e empresas.</p></article>
+        <article class="value-card reveal" style="--d:.3s"><span class="vc-icon"><svg class="ic"><use href="#i-layers"/></svg></span><h3>Variedade</h3><p>Diversos serviços em um só lugar, do residencial ao empresarial.</p></article>
       </div>
     </div>
   </section>
@@ -340,7 +303,7 @@ p:last-child{margin-bottom:0}
   <section class="section">
     <div class="container">
       <header class="section-head reveal">
-        <span class="eyebrow"><span class="eyebrow-dot"></span> Nossa história</span>
+        <span class="eyebrow eyebrow--purple"><span class="eyebrow-dot"></span> Nossa história</span>
         <h2>Como a SERVIX trabalha</h2>
       </header>
       <div class="timeline">
@@ -352,14 +315,14 @@ p:last-child{margin-bottom:0}
     </div>
   </section>
 
-  <section class="section section--cta-pro" id="profissionais">
+  <section class="section section--soft" id="profissionais">
     <div class="container">
       <div class="pro-box reveal">
         <div class="pro-copy">
-          <span class="eyebrow eyebrow--light"><span class="eyebrow-dot"></span> Para profissionais</span>
-          <h2 class="text-light">Você presta serviços? Faça parte da SERVIX.</h2>
-          <p class="text-light-soft">Cadastre seu trabalho e tenha a oportunidade de receber solicitações de clientes que precisam dos seus serviços.</p>
-          <a class="btn btn-light btn-lg" href="index.html#contato">Quero ser profissional <svg class="ic"><use href="#i-arrow"/></svg></a>
+          <span class="eyebrow" style="background:rgba(255,255,255,.12);color:#DCE7FF"><span class="eyebrow-dot" style="background:#FACC15"></span> Para profissionais</span>
+          <h2>Você presta serviços? Faça parte da SERVIX.</h2>
+          <p>Cadastre seu trabalho e tenha a oportunidade de receber solicitações de clientes que precisam dos seus serviços.</p>
+          <a class="btn btn-light btn-lg" href="equipe.html">Quero ser profissional <svg class="ic"><use href="#i-arrow"/></svg></a>
         </div>
         <div class="pro-visual">
           <div class="pro-card"><span class="hv-ic hv-ic--blue"><svg class="ic"><use href="#i-wrench"/></svg></span><div><strong>Cadastro profissional</strong><small>Áreas de atuação e região</small></div></div>
@@ -370,23 +333,18 @@ p:last-child{margin-bottom:0}
     </div>
   </section>
 
-  <section class="section section--soft">
+  <section class="section--cta">
     <div class="container">
-      <div class="biz-box reveal">
-        <div class="biz-copy">
-          <span class="eyebrow"><span class="eyebrow-dot"></span> Para empresas</span>
-          <h2>Sua empresa precisa de uma solução?</h2>
-          <p>Conte para a SERVIX o que sua empresa precisa. Podemos desenvolver soluções tecnológicas, fornecer serviços e criar contratos personalizados.</p>
-          <a class="btn btn-primary btn-lg" href="empresas.html">Falar com a SERVIX <svg class="ic"><use href="#i-arrow"/></svg></a>
+      <div class="cta-box reveal">
+        <h2>Vamos conversar?</h2>
+        <p>Fale com a SERVIX e descubra como podemos ajudar você ou sua empresa.</p>
+        <div class="cta-actions">
+          <a class="btn btn-light btn-lg" href="equipe.html">Falar com a equipe <svg class="ic"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-whats btn-lg" href="https://wa.me/5511913031275" target="_blank" rel="noopener">
+            <svg class="ic" style="width:20px;height:20px"><use href="#i-whatsapp"/></svg>
+            Falar pelo WhatsApp
+          </a>
         </div>
-        <ul class="biz-list">
-          <li><span class="biz-ic"><svg class="ic"><use href="#i-code"/></svg></span> Desenvolvimento e sistemas</li>
-          <li><span class="biz-ic"><svg class="ic"><use href="#i-sparkles"/></svg></span> Automação e IA</li>
-          <li><span class="biz-ic"><svg class="ic"><use href="#i-palette"/></svg></span> Design e marketing</li>
-          <li><span class="biz-ic"><svg class="ic"><use href="#i-home"/></svg></span> Serviços presenciais</li>
-          <li><span class="biz-ic"><svg class="ic"><use href="#i-truck"/></svg></span> Apoio logístico</li>
-          <li><span class="biz-ic"><svg class="ic"><use href="#i-clock"/></svg></span> Contratos recorrentes</li>
-        </ul>
       </div>
     </div>
   </section>
@@ -402,28 +360,31 @@ p:last-child{margin-bottom:0}
           <span class="brand-name">SERVIX</span>
         </a>
         <p class="footer-slogan">Tecnologia, serviços e soluções para o seu dia a dia.</p>
-        <ul class="footer-channels">
-          <li><svg class="ic"><use href="#i-whatsapp"/></svg> WhatsApp <span style="color:#5A6E8F;font-style:italic">A definir</span></li>
-          <li><svg class="ic"><use href="#i-mail"/></svg> E-mail <span style="color:#5A6E8F;font-style:italic">A definir</span></li>
-          <li><svg class="ic"><use href="#i-instagram"/></svg> Instagram <span style="color:#5A6E8F;font-style:italic">A definir</span></li>
-        </ul>
+        <a class="btn btn-whats footer-wa" href="https://wa.me/5511913031275" target="_blank" rel="noopener">
+          <svg class="ic" style="width:18px;height:18px"><use href="#i-whatsapp"/></svg>
+          Fale conosco pelo WhatsApp
+        </a>
       </div>
       <nav class="footer-col"><h4>Navegação</h4><ul>
-        <li><a href="index.html">Início</a></li><li><a href="servicos.html">Serviços</a></li>
-        <li><a href="empresas.html">Para Empresas</a></li>
-        <li><a href="sobre.html">Sobre Nós</a></li>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="servicos.html">Serviços</a></li>
+        <li><a href="tecnologia.html">Tecnologia</a></li>
+        <li><a href="empresas.html">Empresas</a></li>
+        <li><a href="equipe.html">Equipe</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
       </ul></nav>
       <nav class="footer-col"><h4>Categorias</h4><ul>
         <li><a href="servicos.html#casa">Serviços presenciais</a></li>
-        <li><a href="servicos.html#tecnologia">Tecnologia</a></li>
-        <li><a href="servicos.html#ia">Inteligência Artificial</a></li>
+        <li><a href="tecnologia.html">Tecnologia</a></li>
+        <li><a href="tecnologia.html#ia">Inteligência Artificial</a></li>
         <li><a href="empresas.html">Serviços empresariais</a></li>
       </ul></nav>
-      <div class="footer-col footer-cta">
-        <h4>Precisa de um serviço?</h4>
-        <p>Solicite uma proposta personalizada para sua casa ou empresa.</p>
-        <a class="btn btn-primary btn-block" href="index.html#contato">Solicitar serviço</a>
-        <a class="btn btn-green btn-block" href="#profissionais">Quero ser profissional</a>
+      <div class="footer-col">
+        <h4>Acesso</h4>
+        <ul>
+          <li><a href="https://servix-adm.vercel.app" target="_blank" rel="noopener">Entrar (Admin)</a></li>
+          <li><a href="https://servix-adm-pro.vercel.app" target="_blank" rel="noopener">Admin PRO</a></li>
+        </ul>
       </div>
     </div>
     <div class="footer-bottom">
@@ -446,12 +407,8 @@ var SPRITE='<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hi
 +'<symbol id="i-code" viewBox="0 0 24 24"><path d="m9 8.5-4 3.5 4 3.5M15 8.5l4 3.5-4 3.5M13.4 4.8l-2.8 14.4"/></symbol>'
 +'<symbol id="i-cpu" viewBox="0 0 24 24"><rect x="6.5" y="6.5" width="11" height="11" rx="2.5"/><path d="M12 3v2.5M12 18.5V21M3 12h2.5M18.5 12H21"/></symbol>'
 +'<symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M11 3.2 12.6 7.6 17 9.2l-4.4 1.6L11 15.2 9.4 10.8 5 9.2l4.4-1.6z"/><path d="m18 14.2.9 2.4 2.4.9-2.4.9-.9 2.4-.9-2.4-2.4-.9 2.4-.9z"/></symbol>'
-+'<symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 21a9 9 0 1 1 9-9c0 2.3-1.9 3.2-3.2 3.2h-1.4a1.8 1.8 0 0 0-1.3 3c.5.5.2 1.4-.5 1.8-.6.4-1.6.5-2.6.5z"/><circle cx="7.6" cy="12.4" r="1.1"/><circle cx="9.9" cy="8.4" r="1.1"/><circle cx="14.6" cy="8.4" r="1.1"/></symbol>'
 +'<symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7.2" width="18" height="12.6" rx="2.4"/><path d="M9 7.2V5.6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v1.6M3 12.6h18"/></symbol>'
-+'<symbol id="i-truck" viewBox="0 0 24 24"><path d="M2.5 6.5h11v10h-11z"/><path d="M13.5 9.5h3.6l3.4 3.4v3.6h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="16.8" cy="18" r="1.6"/></symbol>'
-+'<symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5.4" width="18" height="13.2" rx="2.4"/><path d="m3.8 7 8.2 6 8.2-6"/></symbol>'
 +'<symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M20.5 11.6a8.4 8.4 0 0 1-12.4 7.4L3.5 20.5l1.6-4.5A8.4 8.4 0 1 1 20.5 11.6z"/><path d="M9.2 8.3c.3-.6.5-.6.8-.6h.6c.2 0 .5 0 .7.5l.8 1.7c.1.2 0 .4-.1.6l-.6.7c-.1.2-.2.3 0 .6a7 7 0 0 0 3.1 2.7c.3.1.5.1.6 0l.8-.9c.2-.2.4-.2.6-.1l1.6.8c.3.2.4.3.4.5a1.6 1.6 0 0 1-1.6 1.5 8 8 0 0 1-8-8.2"/></symbol>'
-+'<symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3.4" y="3.4" width="17.2" height="17.2" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="16.9" cy="7.1" r="1" fill="currentColor" stroke="none"/></symbol>'
 +'<symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3.2 20a5.8 5.8 0 0 1 11.6 0"/><path d="M16 5.2a3.2 3.2 0 0 1 0 5.9M17.4 20a5.9 5.9 0 0 0-1.4-3.9"/></symbol>'
 +'<symbol id="i-wrench" viewBox="0 0 24 24"><path d="M15.5 3.6a5 5 0 0 0-4.3 7.5L3.8 18.5l1.9 1.9 7.4-7.4a5 5 0 0 0 7.1-6.2l-2.8 2.8-2.6-2.6z"/></symbol>'
 +'<symbol id="i-chat" viewBox="0 0 24 24"><path d="M20.5 12a7.6 7.6 0 0 1-8 7.6 8.6 8.6 0 0 1-2.7-.4L4.5 20.5l1.3-4.8A7.6 7.6 0 0 1 12.5 4.4 7.6 7.6 0 0 1 20.5 12z"/></symbol>'
@@ -459,7 +416,6 @@ var SPRITE='<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hi
 +'<symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13.4 2.5 4.8 13.6h6.1l-1.3 7.9 8.6-11.1h-6.1z"/></symbol>'
 +'<symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3.4 8.6 4.5-8.6 4.5-8.6-4.5z"/><path d="m3.4 12.6 8.6 4.5 8.6-4.5"/></symbol>'
 +'<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3.2 20 6v6c0 4.9-3.4 7.9-8 9-4.6-1.1-8-4.1-8-9V6z"/><path d="m8.8 12 2.3 2.3 4.1-4.4"/></symbol>'
-+'<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><path d="M12 7.4V12l3.2 1.9"/></symbol>'
 +'</svg>';
 document.body.insertAdjacentHTML('afterbegin',SPRITE);
 var header=document.querySelector('[data-header]');
@@ -471,7 +427,6 @@ if('IntersectionObserver' in window&&reveals.length){var io=new IntersectionObse
 document.querySelectorAll('[data-year]').forEach(function(el){el.textContent=new Date().getFullYear()});
 var current=location.pathname.split('/').pop()||'index.html';
 document.querySelectorAll('.nav-link').forEach(function(a){var href=a.getAttribute('href')||'';if(href===current)a.classList.add('is-active')});
-document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('href');if(id.length<2)return;var el=document.querySelector(id);if(!el)return;e.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'})})});
 })();
 </script>
 </body>
