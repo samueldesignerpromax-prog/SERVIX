@@ -116,7 +116,6 @@ p:last-child{margin-bottom:0}
 .footer-legal a{color:#B9C7E4}
 .js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.3,1) var(--d,0s),transform .7s cubic-bezier(.2,.7,.3,1) var(--d,0s)}
 .js .reveal.is-in{opacity:1;transform:none}
-/* BIZ HERO */
 .biz-hero{position:relative;padding:clamp(56px,8vw,100px) 0;background:radial-gradient(800px 500px at 88% -10%,rgba(29,78,216,.14),transparent 60%),radial-gradient(600px 400px at 10% 90%,rgba(34,197,94,.10),transparent 60%),linear-gradient(180deg,#fff,var(--bg-soft));overflow:hidden}
 .biz-hero-glow{position:absolute;width:560px;height:560px;right:-180px;top:-200px;border-radius:50%;background:radial-gradient(circle,rgba(29,78,216,.25),transparent 65%);filter:blur(20px);pointer-events:none}
 .biz-hero-inner{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(32px,5vw,64px);align-items:center}
@@ -372,28 +371,29 @@ p:last-child{margin-bottom:0}
         <p>Preencha o formulário abaixo e a SERVIX entra em contato com uma proposta personalizada.</p>
       </header>
       <div class="proposta-wrap reveal">
-        <form class="contact-form" novalidate>
+        <form class="contact-form" id="form-contato" novalidate>
           <div class="hp"><label>Não preencha</label><input type="text" tabindex="-1" /></div>
           <div class="field-row">
-            <div class="field"><label>Nome *</label><input type="text" placeholder="Seu nome" required /></div>
-            <div class="field"><label>Empresa *</label><input type="text" placeholder="Nome da empresa" required /></div>
+            <div class="field"><label>Nome *</label><input type="text" name="nome" placeholder="Seu nome" required /></div>
+            <div class="field"><label>Empresa *</label><input type="text" name="empresa" placeholder="Nome da empresa" required /></div>
           </div>
           <div class="field-row">
-            <div class="field"><label>E-mail corporativo *</label><input type="email" placeholder="voce@empresa.com" required /></div>
-            <div class="field"><label>Telefone</label><input type="tel" placeholder="(00) 00000-0000" /></div>
+            <div class="field"><label>E-mail corporativo *</label><input type="email" name="email" placeholder="voce@empresa.com" required /></div>
+            <div class="field"><label>Telefone</label><input type="tel" name="telefone" placeholder="(00) 00000-0000" /></div>
           </div>
           <div class="field-row">
             <div class="field"><label>Tipo de atendimento *</label>
-              <select required>
+              <select name="tipo" required>
                 <option value="" selected disabled>Selecione</option>
                 <option>Serviço empresarial</option><option>Tecnologia</option>
                 <option>Inteligência Artificial</option><option>Contrato empresarial</option><option>Outro</option>
               </select>
             </div>
-            <div class="field"><label>Área de interesse</label><input type="text" placeholder="Ex.: sistema, IA, limpeza recorrente..." /></div>
+            <div class="field"><label>Área de interesse</label><input type="text" name="servico" placeholder="Ex.: sistema, IA, limpeza..." /></div>
           </div>
-          <div class="field"><label>Descreva a necessidade *</label><textarea placeholder="Conte o desafio, o volume estimado, o prazo e o que sua empresa precisa." required></textarea></div>
-          <button class="btn btn-primary btn-lg btn-block" type="submit">Enviar solicitação <svg class="ic"><use href="#i-arrow"/></svg></button>
+          <div class="field"><label>Descreva a necessidade *</label><textarea name="mensagem" placeholder="Conte o desafio, o volume estimado, o prazo e o que sua empresa precisa." required></textarea></div>
+          <button class="btn btn-primary btn-lg btn-block" type="submit" id="btn-enviar-contato">Enviar solicitação <svg class="ic"><use href="#i-arrow"/></svg></button>
+          <p class="form-status" id="contato-status" style="margin-top:14px;text-align:center;font-weight:600;"></p>
         </form>
       </div>
     </div>
@@ -482,6 +482,55 @@ document.querySelectorAll('[data-year]').forEach(function(el){el.textContent=new
 var current=location.pathname.split('/').pop()||'index.html';
 document.querySelectorAll('.nav-link').forEach(function(a){var href=a.getAttribute('href')||'';if(href===current)a.classList.add('is-active')});
 document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('href');if(id.length<2)return;var el=document.querySelector(id);if(!el)return;e.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'})})});
+})();
+</script>
+
+<!-- ============ ENVIO DE CONTATO ============ -->
+<script>
+(function(){
+  var form = document.getElementById('form-contato');
+  if (!form) return;
+  var status = document.getElementById('contato-status');
+  var btn = document.getElementById('btn-enviar-contato');
+
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    var dados = {
+      nome: form.nome.value.trim(),
+      email: form.email.value.trim().toLowerCase(),
+      telefone: form.telefone.value.trim(),
+      tipo: form.tipo.value,
+      servico: form.servico.value.trim(),
+      mensagem: (form.empresa ? 'Empresa: ' + form.empresa.value.trim() + '\n\n' : '') + form.mensagem.value.trim(),
+      origem: 'site-empresas'
+    };
+    if (!dados.nome || !dados.email || !dados.mensagem) {
+      status.textContent = '⚠️ Preencha nome, e-mail e mensagem';
+      status.style.color = '#DC2626';
+      return;
+    }
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+    status.textContent = '';
+    try {
+      var res = await fetch('https://servix-api-0qe6.onrender.com/api/contato', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(dados)
+      });
+      var json = await res.json();
+      if (!res.ok) throw new Error(json.mensagem || 'Erro ao enviar');
+      status.textContent = '✅ Mensagem enviada! Entraremos em contato em breve.';
+      status.style.color = '#15803D';
+      form.reset();
+    } catch (err) {
+      status.textContent = '❌ ' + (err.message || 'Erro ao enviar');
+      status.style.color = '#DC2626';
+    } finally {
+      btn.disabled = false;
+      btn.innerHTML = 'Enviar solicitação <svg class="ic"><use href="#i-arrow"/></svg>';
+    }
+  });
 })();
 </script>
 </body>
